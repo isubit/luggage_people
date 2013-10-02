@@ -13,6 +13,27 @@ function people_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'auto_entitylabel_node_people';
+  $strongarm->value = '1';
+  $export['auto_entitylabel_node_people'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'auto_entitylabel_pattern_node_people';
+  $strongarm->value = '[node:field_people_title] [node:field_people_first_name] [node:field_people_middle_initial] [node:field_people_last_name]';
+  $export['auto_entitylabel_pattern_node_people'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'auto_entitylabel_php_node_people';
+  $strongarm->value = 0;
+  $export['auto_entitylabel_php_node_people'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_people';
   $strongarm->value = 0;
   $export['comment_anonymous_people'] = $strongarm;
@@ -83,11 +104,20 @@ function people_strongarm() {
       'media_gallery_block' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
           'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '12',
         ),
       ),
       'display' => array(),
