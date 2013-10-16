@@ -192,7 +192,7 @@ function people_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -258,10 +258,9 @@ function people_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 19,
       ),
       'teaser' => array(
@@ -527,7 +526,7 @@ function people_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'file',
-          'image_style' => 'square_thumbnail',
+          'image_style' => 'large',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -558,19 +557,16 @@ function people_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'insert' => 1,
+        'insert' => 0,
         'insert_absolute' => 0,
         'insert_class' => 'people_profile_picture',
         'insert_default' => 'auto',
         'insert_styles' => array(
-          'auto' => 'auto',
+          'auto' => 0,
           'icon_link' => 0,
           'image' => 0,
           'image_large' => 0,
-          'image_media_gallery_large' => 0,
-          'image_media_gallery_thumbnail' => 0,
           'image_medium' => 0,
-          'image_square_thumbnail' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
         ),
