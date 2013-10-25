@@ -18,15 +18,9 @@ function people_ctools_plugin_api($module = NULL, $api = NULL) {
 
 /**
  * Implements hook_views_api().
- *
- * Enabling using templates inside module
  */
 function people_views_api($module = NULL, $api = NULL) {
-  return array(
-    'api' => '3.0',
-    'path' => drupal_get_path('module', 'people'),
-    'template path' => drupal_get_path('module', 'people') . '/templates',
-  );
+  return array("api" => "3.0");
 }
 
 /**
