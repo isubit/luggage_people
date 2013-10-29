@@ -1,0 +1,4 @@
+name = My Public Profile Link
+description = Add a My Public Profile link to toolbar.
+core = 7.x
+dependencies[] = shortcut
