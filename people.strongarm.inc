@@ -169,5 +169,12 @@ function people_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_people'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_people_pattern';
+  $strongarm->value = 'people/[node:field_people_position]/[node:title]';
+  $export['pathauto_node_people_pattern'] = $strongarm;
+
   return $export;
 }
