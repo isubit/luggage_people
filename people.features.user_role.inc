@@ -13,13 +13,13 @@ function people_user_default_roles() {
   // Exported role: people editor.
   $roles['people editor'] = array(
     'name' => 'people editor',
-    'weight' => 9,
+    'weight' => 7,
   );
 
   // Exported role: people user.
   $roles['people user'] = array(
     'name' => 'people user',
-    'weight' => 8,
+    'weight' => 6,
   );
 
   return $roles;
