@@ -39,3 +39,11 @@ function people_views_pre_render(&$view) {
     drupal_add_css($people_module_path . '/css/people.css');
   }
 }
+
+/**
+ * Implements hook_update_projects_alter().
+ */
+function people_update_projects_alter(&$projects) {
+  // Hide a site-specific module from the list.
+  unset($projects['people']);
+}

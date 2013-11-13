@@ -75,7 +75,7 @@ function pubcookiesiteaccess_settings_validate($form, &$form_state) {
   // Zap commas.
   $clean_users = array_map('_pubcookiesiteaccess_clean', $nonempty_users);
 
-  // Validate names; e.g., j(**~±z is a bad name.
+  // Validate names; e.g., j(**~ï¿½z is a bad name.
   foreach ($clean_users as $name) {
     if (user_validate_name($name)) {
       form_set_error('pubcookiesiteaccess_usernames', t("'%name' is not a valid username.", array('%name' => $name)));
@@ -105,4 +105,12 @@ function pubcookiesiteaccess_settings_submit($form, &$form_state) {
  */
 function _pubcookiesiteaccess_clean($s) {
   return rtrim($s, ',');
+}
+
+/**
+ * Implements hook_update_projects_alter().
+ */
+function pubcookie_update_projects_alter(&$projects) {
+  // Hide a site-specific module from the list.
+  unset($projects['pubcookie']);
 }
