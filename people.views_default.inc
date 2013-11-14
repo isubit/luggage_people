@@ -23,6 +23,7 @@ function people_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'People';
+  $handler->display->display_options['css_class'] = 'profile-wrapper';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -45,15 +46,31 @@ function people_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'profile-title h2';
+  /* Field: Content: Biography */
+  $handler->display->display_options['fields']['field_people_bio']['id'] = 'field_people_bio';
+  $handler->display->display_options['fields']['field_people_bio']['table'] = 'field_data_field_people_bio';
+  $handler->display->display_options['fields']['field_people_bio']['field'] = 'field_people_bio';
+  $handler->display->display_options['fields']['field_people_bio']['label'] = '';
+  $handler->display->display_options['fields']['field_people_bio']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['field_people_bio']['alter']['more_link'] = TRUE;
+  $handler->display->display_options['fields']['field_people_bio']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_people_bio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_people_bio']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_people_bio']['element_wrapper_class'] = 'profile-about';
+  $handler->display->display_options['fields']['field_people_bio']['type'] = 'text_plain';
   /* Field: Content: Profile Picture */
   $handler->display->display_options['fields']['field_people_image']['id'] = 'field_people_image';
   $handler->display->display_options['fields']['field_people_image']['table'] = 'field_data_field_people_image';
   $handler->display->display_options['fields']['field_people_image']['field'] = 'field_people_image';
   $handler->display->display_options['fields']['field_people_image']['label'] = '';
   $handler->display->display_options['fields']['field_people_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_people_image']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_people_image']['element_wrapper_class'] = 'profile-img';
   $handler->display->display_options['fields']['field_people_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_people_image']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'people_profile_image',
     'image_link' => 'content',
   );
   /* Field: Content: Email */
