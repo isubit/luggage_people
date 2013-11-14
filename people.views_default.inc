@@ -67,7 +67,7 @@ function people_views_default_views() {
   $handler->display->display_options['fields']['field_people_image']['label'] = '';
   $handler->display->display_options['fields']['field_people_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_people_image']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_people_image']['element_wrapper_class'] = 'profile-img';
+  $handler->display->display_options['fields']['field_people_image']['element_wrapper_class'] = 'profile-img img-responsive';
   $handler->display->display_options['fields']['field_people_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_people_image']['settings'] = array(
     'image_style' => 'people_profile_image',
@@ -92,8 +92,9 @@ function people_views_default_views() {
   $handler->display->display_options['fields']['field_people_category']['field'] = 'field_people_category';
   $handler->display->display_options['fields']['field_people_category']['label'] = '';
   $handler->display->display_options['fields']['field_people_category']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_people_category']['element_type'] = 'h2';
   $handler->display->display_options['fields']['field_people_category']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_people_category']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_people_category']['element_wrapper_class'] = 'profile-category';
   $handler->display->display_options['fields']['field_people_category']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_people_category']['delta_offset'] = '0';
   /* Field: Content: Position(s) */
