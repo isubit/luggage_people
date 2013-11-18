@@ -530,7 +530,7 @@ function people_field_default_field_bases() {
   // Exported field_base: 'field_people_website'
   $field_bases['field_people_website'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => 3,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_people_website',
