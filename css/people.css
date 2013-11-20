@@ -55,6 +55,7 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
     float: right;
     padding: 0 5px;
     width: 30%;
+    margin-bottom: 1em;
 }
 
 .contact.h2{
