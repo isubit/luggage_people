@@ -14,7 +14,7 @@ function people_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_node_people';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['auto_entitylabel_node_people'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -117,16 +117,16 @@ function people_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '21',
+          'weight' => '25',
         ),
         'metatags' => array(
-          'weight' => '23',
+          'weight' => '27',
         ),
         'redirect' => array(
-          'weight' => '22',
+          'weight' => '26',
         ),
         'xmlsitemap' => array(
-          'weight' => '24',
+          'weight' => '28',
         ),
       ),
       'display' => array(),
