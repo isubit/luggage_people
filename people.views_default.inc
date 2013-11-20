@@ -71,17 +71,20 @@ function people_views_default_views() {
   $handler->display->display_options['fields']['field_people_email']['id'] = 'field_people_email';
   $handler->display->display_options['fields']['field_people_email']['table'] = 'field_data_field_people_email';
   $handler->display->display_options['fields']['field_people_email']['field'] = 'field_people_email';
-  $handler->display->display_options['fields']['field_people_email']['label'] = '';
+  $handler->display->display_options['fields']['field_people_email']['label'] = 'Contact';
+  $handler->display->display_options['fields']['field_people_email']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_people_email']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_people_email']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_people_email']['element_wrapper_type'] = 'div';
   /* Field: Content: Website */
   $handler->display->display_options['fields']['field_people_website']['id'] = 'field_people_website';
   $handler->display->display_options['fields']['field_people_website']['table'] = 'field_data_field_people_website';
   $handler->display->display_options['fields']['field_people_website']['field'] = 'field_people_website';
-  $handler->display->display_options['fields']['field_people_website']['label'] = '';
+  $handler->display->display_options['fields']['field_people_website']['label'] = 'Web Links';
+  $handler->display->display_options['fields']['field_people_website']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_people_website']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_people_website']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_people_website']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_people_website']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_people_website']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_people_website']['delta_offset'] = '0';
   /* Field: Content: Profile Picture */
   $handler->display->display_options['fields']['field_people_image']['id'] = 'field_people_image';
@@ -93,7 +96,7 @@ function people_views_default_views() {
   $handler->display->display_options['fields']['field_people_image']['element_wrapper_class'] = 'profile-img img-responsive';
   $handler->display->display_options['fields']['field_people_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_people_image']['settings'] = array(
-    'image_style' => 'people_profile_image',
+    'image_style' => 'people_thumb',
     'image_link' => 'content',
   );
   /* Field: Content: Category */
