@@ -84,7 +84,7 @@ function people_views_default_views() {
   $handler->display->display_options['fields']['field_people_website']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_people_website']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_people_website']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_people_website']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_people_website']['delta_limit'] = '2';
   $handler->display->display_options['fields']['field_people_website']['delta_offset'] = '0';
   /* Field: Content: Profile Picture */
   $handler->display->display_options['fields']['field_people_image']['id'] = 'field_people_image';
