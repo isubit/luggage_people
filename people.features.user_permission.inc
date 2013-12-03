@@ -51,6 +51,7 @@ function people_user_default_permissions() {
   $permissions['edit own people content'] = array(
     'name' => 'edit own people content',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'people user' => 'people user',
     ),
     'module' => 'node',

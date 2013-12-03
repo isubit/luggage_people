@@ -364,15 +364,11 @@ function pubcookie_change_ownership($_pubcookie_user) {
         $pos = strpos($record['title'], '[');
         $title_only = drupal_substr($record['title'], 0, $pos);
 
+        $node->title = $record['givenname'].' '.$record['sn'];
         $node->field_people_first_name[LANGUAGE_NONE][0]['value'] = $record['givenname'];
         $node->field_people_middle_initial[LANGUAGE_NONE][0]['value'] = $record['isupersonmiddleinitial'];
         $node->field_people_last_name[LANGUAGE_NONE][0]['value'] = $record['sn'];
-
         $node->field_people_position[LANGUAGE_NONE][0]['value'] = rtrim($title_only);
-        $node->field_people_category[LANGUAGE_NONE][0]['value'] = $record['userclass'];
-        $node->field_people_affiliation[LANGUAGE_NONE][0]['value'] = 'Iowa State University';
-
-        $node->field_people_major[LANGUAGE_NONE][0]['value'] = array($record['isupersonmajor'],$record['isupersonmajor2']);
 
         //street
         $node->field_people_email[LANGUAGE_NONE][0]['email'] = $record['mail'];

@@ -6,27 +6,6 @@
 
 include_once 'people.features.inc';
 
-//function people_node_access($node, $op, $account) {
-//  if ($op == 'create' && $node->type == 'the_content_type') {
-//    // Grab the number of nodes of this type the user has already created.
-//    $args = array(':type' => 'people', ':uid' => $account->uid);
-//    $node_count = db_query('SELECT COUNT(nid) FROM {node} WHERE type = :type AND uid = :uid')->fetchField();
-//
-//    // Get the max allowed number of nodes
-//    $limit = '1';
-//
-//    // If the user us at/has exceeded the limit, set a message and send the user
-//    // off somewhere else.
-//    if ($limit >= $node_count) {
-//      return NODE_ACCESS_DENY;
-//    }
-//
-//    return NODE_ACCESS_ALLOW;
-//  }
-//
-//  return NODE_ACCESS_IGNORE;
-//}
-
 /**
  * Implements hook_views_pre_render().
  */
