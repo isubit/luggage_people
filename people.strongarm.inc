@@ -117,16 +117,16 @@ function people_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '25',
+          'weight' => '24',
         ),
         'metatags' => array(
-          'weight' => '27',
-        ),
-        'redirect' => array(
           'weight' => '26',
         ),
+        'redirect' => array(
+          'weight' => '25',
+        ),
         'xmlsitemap' => array(
-          'weight' => '28',
+          'weight' => '27',
         ),
       ),
       'display' => array(),
