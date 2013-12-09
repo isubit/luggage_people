@@ -71,7 +71,6 @@ function people_views_default_views() {
   $handler->display->display_options['fields']['field_people_email']['id'] = 'field_people_email';
   $handler->display->display_options['fields']['field_people_email']['table'] = 'field_data_field_people_email';
   $handler->display->display_options['fields']['field_people_email']['field'] = 'field_people_email';
-  $handler->display->display_options['fields']['field_people_email']['label'] = 'Contact';
   $handler->display->display_options['fields']['field_people_email']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_people_email']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_people_email']['element_wrapper_type'] = 'div';
