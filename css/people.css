@@ -105,6 +105,76 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 
 /*------------------------people individual page--------------------*/
 
+/*------------------------begin people node page--------------------*/
+.node-people .field-name-field-people-category {
+    clear: right;
+    float: right;
+    width: 45%;
+}
+.node-people .field-name-field-people-position {
+    clear: right;
+    float: right;
+    font-weight: bold;
+    width: 45%;
+}
+.node-people .field-name-field-people-education {
+	background-image: url("/sites/all/themes/micro/images/icons/education.png");
+	clear: right;
+	float: right;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	width: 45%;
+	background-position:top left;
+	background-repeat: no-repeat;
+}
+.node-people .field-name-field-people-website {
+    background-image: url("/sites/all/themes/micro/images/icons/web.png");
+	background-position:top left;
+	background-repeat: no-repeat;
+    clear: right;
+    float: right;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 45%;
+}
+.node-people .field-name-field-people-email {
+    background-image: url("/sites/all/themes/micro/images/icons/email.png");
+	background-position:top left;
+	background-repeat: no-repeat;
+    clear: right;
+    float: right;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 45%;
+}
+.node-people .field-name-field-people-phone {
+    background-image: url("/sites/all/themes/micro/images/icons/phone.png");
+	background-position:top left;
+	background-repeat: no-repeat;
+    clear: right;
+    float: right;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 45%;
+}
+.node-people .field-name-field-people-cv {
+    background-image: url("/sites/all/themes/micro/images/icons/phone.png");
+	background-position:top left;
+	background-repeat: no-repeat;
+    clear: right;
+    float: right;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 45%;
+}
+.node-people .field-name-field-people-image, img {
+    height: auto;
+    max-width: 70%;
+}
+.node-people .field-name-field-people-bio {
+    padding-right: 15px;
+}
+/*------------------------end people node page--------------------*/
 .node-people {
     width: 100%;
 }
