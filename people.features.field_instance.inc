@@ -539,13 +539,12 @@ function people_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'flexslider_fields',
+        'module' => 'image',
         'settings' => array(
-          'caption' => FALSE,
-          'image_style' => '',
-          'optionset' => 'default',
+          'image_link' => 'content',
+          'image_style' => 'people_thumb',
         ),
-        'type' => 'flexslider',
+        'type' => 'image',
         'weight' => 5,
       ),
     ),
