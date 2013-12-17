@@ -1,133 +1,94 @@
 /*------------------------begin people node page--------------------*/
 
 .node-people .field-name-field-people-category {
-
-    clear: right;
-
-    float: right;
-
-    width: 45%;
+    width: 30%;
 
 }
 
 .node-people .field-name-field-people-position {
-
-    clear: right;
-
-    float: right;
-
-    font-weight: bold;
-
-    width: 45%;
-
+	color: #990000;
+    font-size: 1.4em;
+    text-shadow: 0 0 1px #929292;
+    width: 30%;
 }
 
 .node-people .field-name-field-people-education {
-
-	background-image: url("/sites/all/themes/micro/images/icons/education.png");
-
-	clear: right;
-
-	float: right;
-
-	padding-bottom: 5px;
-
-	padding-top: 5px;
-
-	width: 45%;
-
+	background-image: url("/micro/sites/all/themes/micro/images/icons/education.png");
 	background-position:top left;
-
 	background-repeat: no-repeat;
+	padding-top: 5px;
+	padding-left: 25px;
+	width: 45%;
+	margin-bottom: 5px;
 
 }
 
 .node-people .field-name-field-people-website {
 
-    background-image: url("/sites/all/themes/micro/images/icons/web.png");
+    background-image: url("/micro/sites/all/themes/micro/images/icons/web.png");
 
 	background-position:top left;
 
 	background-repeat: no-repeat;
 
-    clear: right;
-
-    float: right;
-
-    padding-bottom: 5px;
-
     padding-top: 5px;
+	padding-left: 25px;
+
 
     width: 45%;
-
+	margin-bottom: 5px;
 }
-
+.field-name-field-people-website .field-item.even {
+    border-right: 1px solid #990000;
+    padding-right: 5px;
+}
+.field-name-field-people-website .field-item.odd {
+    padding-left: 5px;
+}
 .node-people .field-name-field-people-email {
 
-    background-image: url("/sites/all/themes/micro/images/icons/email.png");
+    background-image: url("/micro/sites/all/themes/micro/images/icons/email.png");
 
 	background-position:top left;
 
 	background-repeat: no-repeat;
 
-    clear: right;
-
-    float: right;
-
-    padding-bottom: 5px;
-
     padding-top: 5px;
+	padding-left: 25px;
 
     width: 45%;
-
+	margin-bottom: 5px;
 }
 
 .node-people .field-name-field-people-phone {
 
-    background-image: url("/sites/all/themes/micro/images/icons/phone.png");
+    background-image: url("/micro/sites/all/themes/micro/images/icons/phone.png");
 
 	background-position:top left;
 
 	background-repeat: no-repeat;
 
-    clear: right;
-
-    float: right;
-
-    padding-bottom: 5px;
-
     padding-top: 5px;
+	padding-left: 25px;
+
 
     width: 45%;
-
+	margin-bottom: 5px;
 }
 
 .node-people .field-name-field-people-cv {
 
-    background-image: url("/sites/all/themes/micro/images/icons/phone.png");
+    background-image: url("/micro/sites/all/themes/micro/images/icons/cv.png");
 
 	background-position:top left;
 
 	background-repeat: no-repeat;
 
-    clear: right;
-
-    float: right;
-
-    padding-bottom: 5px;
-
     padding-top: 5px;
+	padding-left: 25px;
 
     width: 45%;
-
-}
-
-.node-people .field-name-field-people-image, img {
-
-    height: auto;
-
-    max-width: 70%;
-
+	margin-bottom: 5px;
 }
 
 .node-people .field-name-field-people-bio {
@@ -241,32 +202,29 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 /*------------------------people overview page--------------------*/
 
 .node-people {
-  width: 100%;
-}
+	background: none repeat scroll 0 0 #F9F6EB;
+    border-radius: 12px 12px 12px 12px;
+    padding: 20px;
+    width: 100%;}
 
 .field.field-name-field-people-image.field-type-image {
   border: 1px solid;
   border-radius: 3px 3px 3px 3px;
   box-shadow: 0 0 2px #717171;
   float: left;
-  margin-left: 10px;
-  padding: 10px;
-  width: 220px;
+  margin-right: 20px;
+  padding: 5px;
+  width: 350px;
 }
 
 .field-name-field-people-image .field-item.even img {
   border-radius: 4px 4px 4px 4px;
 }
 
-.field.field-name-field-people-education {
-  padding-left: 260px;
-  width: 662px;
-}
 
 .field.field-name-field-people-bio {
-  padding-left: 260px;
   padding-top: 5px;
-  width: 622px;
+  border-bottom: 3px double #D3D3D3;
 }
 
 .field.field-name-field-people-address.field-type-text.field-label-inline.clearfix {
@@ -278,10 +236,7 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 }
 
 .field-name-field-people-cv.field-type-file.field-label-inline.clearfix {
-  border-top: 1px solid;
-  margin-top: -276px;
-  padding-top: 5px;
-  width: 220px;
+	width: 220px
 }
 
 .field.field-name-field-people-email.field-type-email.field-label-inline.clearfix {
