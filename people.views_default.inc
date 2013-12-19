@@ -40,6 +40,16 @@ function people_views_default_views() {
     ),
   );
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['required'] = TRUE;
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'people_category' => 'people_category',
+    'keywords' => 0,
+    'tags' => 0,
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -71,7 +81,6 @@ function people_views_default_views() {
   $handler->display->display_options['fields']['field_people_email']['id'] = 'field_people_email';
   $handler->display->display_options['fields']['field_people_email']['table'] = 'field_data_field_people_email';
   $handler->display->display_options['fields']['field_people_email']['field'] = 'field_people_email';
-  $handler->display->display_options['fields']['field_people_email']['label'] = 'Contact';
   $handler->display->display_options['fields']['field_people_email']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_people_email']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_people_email']['element_wrapper_type'] = 'div';
@@ -110,6 +119,15 @@ function people_views_default_views() {
   $handler->display->display_options['fields']['field_people_category']['element_wrapper_class'] = 'profile-category';
   $handler->display->display_options['fields']['field_people_category']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_people_category']['delta_offset'] = '0';
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['relationship'] = 'term_node_tid';
+  /* Sort criterion: Content: Last Name (field_people_last_name) */
+  $handler->display->display_options['sorts']['field_people_last_name_value']['id'] = 'field_people_last_name_value';
+  $handler->display->display_options['sorts']['field_people_last_name_value']['table'] = 'field_data_field_people_last_name';
+  $handler->display->display_options['sorts']['field_people_last_name_value']['field'] = 'field_people_last_name_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
