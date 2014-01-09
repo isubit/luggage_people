@@ -1,2 +1,2 @@
-people
+luggage_people
 ======

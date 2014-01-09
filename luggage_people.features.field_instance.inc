@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * people.features.field_instance.inc
+ * luggage_people.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function people_field_default_field_instances() {
+function luggage_people_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-people-field_people_advisor'

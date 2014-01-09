@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * people.features.taxonomy.inc
+ * luggage_people.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function people_taxonomy_default_vocabularies() {
+function luggage_people_taxonomy_default_vocabularies() {
   return array(
     'people_category' => array(
       'name' => 'People Category',

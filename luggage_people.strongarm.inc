@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * people.strongarm.inc
+ * luggage_people.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function people_strongarm() {
+function luggage_people_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

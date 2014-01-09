@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * people.features.user_role.inc
+ * luggage_people.features.user_role.inc
  */
 
 /**
  * Implements hook_user_default_roles().
  */
-function people_user_default_roles() {
+function luggage_people_user_default_roles() {
   $roles = array();
 
   // Exported role: people editor.

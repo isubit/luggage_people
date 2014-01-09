@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * people.features.user_permission.inc
+ * luggage_people.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function people_user_default_permissions() {
+function luggage_people_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'create people content'.

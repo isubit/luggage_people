@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * people.views_default.inc
+ * luggage_people.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function people_views_default_views() {
+function luggage_people_views_default_views() {
   $export = array();
 
   $view = new view();

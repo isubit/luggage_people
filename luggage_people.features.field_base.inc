@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * people.features.field_base.inc
+ * luggage_people.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function people_field_default_field_bases() {
+function luggage_people_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_people_advisor'

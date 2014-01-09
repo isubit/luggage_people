@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * people.features.menu_custom.inc
+ * luggage_people.features.menu_custom.inc
  */
 
 /**
  * Implements hook_menu_default_menu_custom().
  */
-function people_menu_default_menu_custom() {
+function luggage_people_menu_default_menu_custom() {
   $menus = array();
 
   // Exported menu: main-menu.

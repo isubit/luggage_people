@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * people.field_group.inc
+ * luggage_people.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function people_field_group_info() {
+function luggage_people_field_group_info() {
   $export = array();
 
   $field_group = new stdClass();
