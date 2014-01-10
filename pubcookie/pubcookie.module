@@ -333,6 +333,12 @@ function pubcookie_change_ownership($_pubcookie_user) {
   if ($role = user_role_load_by_name($record['userclass'])) {
     user_multiple_role_edit(array($user->uid), 'add_role', $role->rid);
   }
+  
+  // Bail out if no node of type 'people' exists.
+  $node_type_names = node_type_get_names();
+  if (!isset($node_type_names['people'])) {
+    return;
+  }
 
   // Find existing People content that has this user's email attached to it.
   $query = new EntityFieldQuery();
