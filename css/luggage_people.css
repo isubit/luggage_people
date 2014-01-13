@@ -1,53 +1,35 @@
 /*------------------------begin people node page--------------------*/
 
+.node-people {
+  background: none repeat scroll 0 0 #F9F6EB;
+  border-radius: 12px 12px 12px 12px;
+  padding: 20px;
+  width: 100%;
+}
+
+.node-people .field {
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-right: 5px;
+}
+
 .node-people .field-name-field-people-position {
-	color: #990000;
-    font-size: 1.4em;
-    text-shadow: 0 0 1px #929292;
+  color: #990000;
+  font-size: 1.4em;
+  text-shadow: 0 0 1px #929292;
 }
 
-.node-people .field-name-field-people-education {
-	padding-top: 5px;
-	padding-left: 25px;
-	margin-bottom: 5px;
-
+.node-people .field-name-field-people-image {
+  border: 1px solid;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 0 2px #717171;
+  float: left;
+  margin-right: 20px;
+  padding: 5px;
 }
 
-.node-people .field-name-field-people-website {
-  padding-top: 5px;
-	padding-left: 25px;
-	margin-bottom: 5px;
-}
-
-.field-name-field-people-website .field-item.even {
-    border-right: 1px solid #990000;
-    padding-right: 5px;
-}
-
-.field-name-field-people-website .field-item.odd {
-    padding-left: 5px;
-}
-
-.node-people .field-name-field-people-email {
-  padding-top: 5px;
-	padding-left: 25px;
-	margin-bottom: 5px;
-}
-
-.node-people .field-name-field-people-phone {
-  padding-top: 5px;
-	padding-left: 25px;
-	margin-bottom: 5px;
-}
-
-.node-people .field-name-field-people-cv {
-  padding-top: 5px;
-	padding-left: 25px;
-	margin-bottom: 5px;
-}
-
-.node-people .field-name-field-people-bio {
-    padding-right: 15px;
+.node-people .field-name-field-people-image img {
+  border-radius: 4px 4px 4px 4px;
 }
 
 /*------------------------end people node page--------------------*/
@@ -89,10 +71,6 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
   min-width: 480px;
 }
 
-.view.view-people.view-id-people, table {
-  border: medium none !important;
-}
-
 .views-field.views-field-title.profile-title.h2 {
   font-size: 1.1em;
 }
@@ -109,25 +87,7 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
   padding: 0 5px;
   width: 30%;
   margin-bottom: 1em;
-  clear:both;
-}
-
-.contact.h2 {
-  border-bottom: 1px solid #C8C2A7;
-  color: #5C5C5C;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-align: center;
-  text-shadow: 0 1px 2px #FFFFFF;
-}
-
-.website.h2 {
-  border-bottom: 1px solid #C8C2A7;
-  color: #5C5C5C;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-align: center;
-  text-shadow: 0 1px 2px #FFFFFF;
+  clear: both;
 }
 
 .views-field.views-field-field-people-website {
@@ -152,72 +112,8 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
   border-bottom: 2px solid #CCCCCC;
 }
 
-/*------------------------people overview page--------------------*/
-
-.node-people {
-	background: none repeat scroll 0 0 #F9F6EB;
-    border-radius: 12px 12px 12px 12px;
-    padding: 20px;
-    width: 100%;}
-
-.field.field-name-field-people-image.field-type-image {
-  border: 1px solid;
-  border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 0 2px #717171;
-  float: left;
-  margin-right: 20px;
-  padding: 5px;
-  /*width: 350px;*/
-}
-
-.field-name-field-people-image .field-item.even img {
-  border-radius: 4px 4px 4px 4px;
-}
-
-
-.field.field-name-field-people-bio {
-  padding-top: 5px;
-}
-
-.field.field-name-field-people-address.field-type-text.field-label-inline.clearfix {
-  width: 200px;
-}
-
-.field.field-name-field-keywords.field-type-taxonomy-term-reference.field-label-hidden {
-  float: right;
-}
-
-.field-name-field-people-cv.field-type-file.field-label-inline.clearfix {
-	width: 220px
-}
-
-.field.field-name-field-people-email.field-type-email.field-label-inline.clearfix {
-  width: 220px;
-}
-
-.field.field-name-field-people-phone.field-type-text.field-label-inline.clearfix {
-  width: 220px;
-}
-
-.field.field-name-field-people-address.field-type-text.field-label-inline.clearfix {
-  width: 200px;
-}
-
-/*-- People Specific Styling --*/
-view.view-people.view-id-people.view-display-id-people.profile-wrapper {
-  min-width: 480px;
-
-}
-
 .view.view-people.view-id-people, table {
   border: medium none !important;
-}
-
-.views-field.views-field-field-people-position.profile-position {
-  width: 50%;
-}
-
-.views-field.views-field-field-people-position {
 }
 
 .views-field.views-field-field-people-position.profile-position {
@@ -248,13 +144,6 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 }
 
 .views-field.views-field-field-people-position.profile-position {
-  width: 50%;
-}
-
-.views-field.views-field-field-people-position {
-}
-
-.views-field.views-field-field-people-position.profile-position {
   font-size: 1.1em;
 }
 
@@ -270,84 +159,26 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
   max-width: 100%;
 }
 
-/*-- People Specific Styling --*/
 view.view-people.view-id-people.view-display-id-people.profile-wrapper {
   min-width: 480px;
 }
-.view-content > h3 {
-  background-color: #E9E8DD;
-  background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, 0.2) 25%, rgba(0, 0, 0, 0));
-  border: 1px solid #CCCCCC;
-  border-radius: 2px 2px 2px 2px;
-  color: #4F4F4F;
-  font-family: inherit;
-  font-weight: 600;
-  padding: 2px;
-  text-align: center;
-}
-.view.view-people.view-id-people, table {
-  border: medium none !important;
-  max-width: 740px;
-  min-width: 480px;
-}
+
 .view.view-people.view-id-people, table {
   border: medium none !important;
 }
+
 .views-field.views-field-title.profile-title.h2 {
   font-size: 1.3em;
-  text-shadow:0px 0px 1px #cccccc;
-}
-.views-field.views-field-field-people-bio.profile-about {
-  float: right;
-  width: 65%;
-  padding-bottom: 10px;
-}
-
-.views-field.views-field-field-people-email {
-  float: right;
-}
-
-.contact.h2{
-  border-bottom: 1px solid #C8C2A7;
-  color: #5C5C5C;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-align: center;
-  text-shadow: 0 1px 2px #FFFFFF;
-}
-.website.h2 {
-  border-bottom: 1px solid #C8C2A7;
-  color: #5C5C5C;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-align: center;
-  text-shadow: 0 1px 2px #FFFFFF;
-}
-
-.views-field.views-field-field-people-website {
-  float: right;
+  text-shadow: 0px 0px 1px #cccccc;
 }
 
 .views-field.views-field-field-people-position.profile-position {
   width: 50%;
 }
+
 .views-field.views-field-field-people-position {
 }
 
 .views-field.views-field-field-people-position.profile-position {
   font-size: 1.1em;
-}
-.people-profile {
-  border-bottom: 1px solid #CCCCCC;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  min-width: 525px;
-}
-
-
-.view-display-id-people .views-row {
-  background: none repeat scroll 0 0 #EEEEEE;
-  border-radius: 4px 4px 4px 4px;
-  box-shadow: 0 0 2px #C6C6C6;
-  padding: 10px;
 }
