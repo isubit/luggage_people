@@ -7,9 +7,6 @@
 }
 
 .node-people .field-name-field-people-education {
-	background-image: url("/micro/sites/all/themes/micro/images/icons/education.png");
-	background-position:top left;
-	background-repeat: no-repeat;
 	padding-top: 5px;
 	padding-left: 25px;
 	margin-bottom: 5px;
@@ -17,10 +14,7 @@
 }
 
 .node-people .field-name-field-people-website {
-    background-image: url("/micro/sites/all/themes/micro/images/icons/web.png");
-	background-position:top left;
-	background-repeat: no-repeat;
-    padding-top: 5px;
+  padding-top: 5px;
 	padding-left: 25px;
 	margin-bottom: 5px;
 }
@@ -35,28 +29,19 @@
 }
 
 .node-people .field-name-field-people-email {
-    background-image: url("/micro/sites/all/themes/micro/images/icons/email.png");
-	background-position:top left;
-	background-repeat: no-repeat;
-    padding-top: 5px;
+  padding-top: 5px;
 	padding-left: 25px;
 	margin-bottom: 5px;
 }
 
 .node-people .field-name-field-people-phone {
-    background-image: url("/micro/sites/all/themes/micro/images/icons/phone.png");
-	background-position:top left;
-	background-repeat: no-repeat;
-    padding-top: 5px;
+  padding-top: 5px;
 	padding-left: 25px;
 	margin-bottom: 5px;
 }
 
 .node-people .field-name-field-people-cv {
-    background-image: url("/micro/sites/all/themes/micro/images/icons/cv.png");
-	background-position:top left;
-	background-repeat: no-repeat;
-    padding-top: 5px;
+  padding-top: 5px;
 	padding-left: 25px;
 	margin-bottom: 5px;
 }
