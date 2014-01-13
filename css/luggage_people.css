@@ -3,14 +3,16 @@
 .node-people {
   background: none repeat scroll 0 0 #F9F6EB;
   border-radius: 12px 12px 12px 12px;
-  padding: 20px;
   width: 100%;
 }
 
 .node-people .field {
-  margin-bottom: 5px;
-  padding-top: 5px;
-  padding-right: 5px;
+  padding: 5px 5px 5px 0px;
+}
+
+.node-people .field-name-field-people-category{
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .node-people .field-name-field-people-position {
