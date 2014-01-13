@@ -37,10 +37,13 @@
 /* Aligning Address fields */
 .node-people .field-name-field-people-street,
 .node-people .field-name-field-people-city,
-.node-people .field-name-field-people-state,
-.node-people .field-name-field-people-postal {
+.node-people .field-name-field-people-state {
   float: left;
   padding-right: 5px;
+}
+
+.node-people .field-name-field-people-postal {
+  clear:both;
 }
 
 /*------------------------end people node page--------------------*/
