@@ -1,15 +1,9 @@
 /*------------------------begin people node page--------------------*/
 
-.node-people .field-name-field-people-category {
-    width: 30%;
-
-}
-
 .node-people .field-name-field-people-position {
 	color: #990000;
     font-size: 1.4em;
     text-shadow: 0 0 1px #929292;
-    width: 30%;
 }
 
 .node-people .field-name-field-people-education {
@@ -18,83 +12,57 @@
 	background-repeat: no-repeat;
 	padding-top: 5px;
 	padding-left: 25px;
-	width: 45%;
 	margin-bottom: 5px;
 
 }
 
 .node-people .field-name-field-people-website {
-
     background-image: url("/micro/sites/all/themes/micro/images/icons/web.png");
-
 	background-position:top left;
-
 	background-repeat: no-repeat;
-
     padding-top: 5px;
 	padding-left: 25px;
-
-
-    width: 45%;
 	margin-bottom: 5px;
 }
+
 .field-name-field-people-website .field-item.even {
     border-right: 1px solid #990000;
     padding-right: 5px;
 }
+
 .field-name-field-people-website .field-item.odd {
     padding-left: 5px;
 }
+
 .node-people .field-name-field-people-email {
-
     background-image: url("/micro/sites/all/themes/micro/images/icons/email.png");
-
 	background-position:top left;
-
 	background-repeat: no-repeat;
-
     padding-top: 5px;
 	padding-left: 25px;
-
-    width: 45%;
 	margin-bottom: 5px;
 }
 
 .node-people .field-name-field-people-phone {
-
     background-image: url("/micro/sites/all/themes/micro/images/icons/phone.png");
-
 	background-position:top left;
-
 	background-repeat: no-repeat;
-
     padding-top: 5px;
 	padding-left: 25px;
-
-
-    width: 45%;
 	margin-bottom: 5px;
 }
 
 .node-people .field-name-field-people-cv {
-
     background-image: url("/micro/sites/all/themes/micro/images/icons/cv.png");
-
 	background-position:top left;
-
 	background-repeat: no-repeat;
-
     padding-top: 5px;
 	padding-left: 25px;
-
-    width: 45%;
 	margin-bottom: 5px;
 }
 
 .node-people .field-name-field-people-bio {
-
     padding-right: 15px;
-
 }
 
 /*------------------------end people node page--------------------*/
@@ -224,7 +192,6 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 
 .field.field-name-field-people-bio {
   padding-top: 5px;
-  border-bottom: 3px double #D3D3D3;
 }
 
 .field.field-name-field-people-address.field-type-text.field-label-inline.clearfix {
