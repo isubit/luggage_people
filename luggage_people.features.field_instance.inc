@@ -424,7 +424,7 @@ function luggage_people_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
@@ -550,7 +550,7 @@ function luggage_people_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
-      'default_image' => 53,
+      'default_image' => 0,
       'file_directory' => 'people/profilepictures',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -571,14 +571,17 @@ function luggage_people_field_default_field_instances() {
           'auto' => 0,
           'icon_link' => 0,
           'image' => 0,
-          'image_announcement_slider' => 0,
+          'image_body_image_large_square' => 0,
+          'image_body_image_small_square' => 0,
+          'image_body_image_small_wide' => 0,
+          'image_body_image_wide' => 0,
           'image_flexslider_full' => 0,
           'image_flexslider_thumbnail' => 0,
           'image_large' => 0,
           'image_medium' => 0,
           'image_people_full' => 0,
+          'image_people_profile_image' => 0,
           'image_people_thumb' => 0,
-          'image_simple_block_announcement' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
         ),
@@ -1338,7 +1341,7 @@ function luggage_people_field_default_field_instances() {
 Interest1, Interest2, Interest3, ....',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',

@@ -39,6 +39,7 @@ function luggage_people_views_default_views() {
       'rendered_strip' => 0,
     ),
   );
+  $handler->display->display_options['style_options']['row_class'] = 'clearfix';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Content: Taxonomy terms on node */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
@@ -84,6 +85,7 @@ function luggage_people_views_default_views() {
   $handler->display->display_options['fields']['field_people_email']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_people_email']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_people_email']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_people_email']['hide_empty'] = TRUE;
   /* Field: Content: Website */
   $handler->display->display_options['fields']['field_people_website']['id'] = 'field_people_website';
   $handler->display->display_options['fields']['field_people_website']['table'] = 'field_data_field_people_website';
@@ -92,6 +94,7 @@ function luggage_people_views_default_views() {
   $handler->display->display_options['fields']['field_people_website']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_people_website']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_people_website']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_people_website']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_people_website']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_people_website']['delta_limit'] = '2';
   $handler->display->display_options['fields']['field_people_website']['delta_offset'] = '0';
@@ -101,8 +104,7 @@ function luggage_people_views_default_views() {
   $handler->display->display_options['fields']['field_people_image']['field'] = 'field_people_image';
   $handler->display->display_options['fields']['field_people_image']['label'] = '';
   $handler->display->display_options['fields']['field_people_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_people_image']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_people_image']['element_wrapper_class'] = 'profile-img img-responsive';
+  $handler->display->display_options['fields']['field_people_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_people_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_people_image']['settings'] = array(
     'image_style' => 'people_thumb',
