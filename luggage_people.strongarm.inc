@@ -176,7 +176,7 @@ function luggage_people_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_people_pattern';
-  $strongarm->value = 'people/[node:field_people_position]/[node:title]';
+  $strongarm->value = 'people/[node:field_people_first_name]-[node:field_people_last_name]';
   $export['pathauto_node_people_pattern'] = $strongarm;
 
   return $export;
