@@ -51,13 +51,6 @@ function luggage_people_views_default_views() {
     'keywords' => 0,
     'tags' => 0,
   );
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -80,7 +73,6 @@ function luggage_people_views_default_views() {
   $handler->display->display_options['fields']['field_people_bio']['label'] = '';
   $handler->display->display_options['fields']['field_people_bio']['alter']['max_length'] = '300';
   $handler->display->display_options['fields']['field_people_bio']['alter']['more_link'] = TRUE;
-  $handler->display->display_options['fields']['field_people_bio']['alter']['more_link_path'] = 'node/[nid]';
   $handler->display->display_options['fields']['field_people_bio']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_people_bio']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_people_bio']['element_wrapper_type'] = 'div';
