@@ -31,13 +31,16 @@ function pubcookie_menu() {
     'file' => 'pubcookie.admin.inc',
   );
   $items['login'] = array(
-    'page callback' => 'drupal_goto',
-    'page arguments' => array(pubcookie_login_link()),
+    'page callback' => 'pubcookie_login_redirect',
     'access callback' => TRUE,
     'type' => MENU_CALLBACK,
   );
 
   return $items;
+}
+
+function pubcookie_login_redirect() {
+  drupal_goto(pubcookie_login_link());
 }
 
 /**
