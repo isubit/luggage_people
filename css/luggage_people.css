@@ -48,6 +48,44 @@
   clear:both;
 }
 
+#edit-field-people-title{
+  float:left;
+  width: 15%;
+  margin-right: 2em;
+}
+
+#edit-field-people-middle-initial{
+  clear: both;
+  float: left;
+  width: 15%;
+  margin-right: 2em;
+}
+
+#edit-field-tags,
+#edit-field-people-website {
+  clear: both;
+}
+
+#edit-field-people-street,
+#edit-field-people-email {
+  float:left;
+  width: 35%;
+  margin-right: 2em;
+}
+
+#edit-field-people-state{
+  clear: both;
+  float: left;
+  width: 35%;
+  margin-right: 2em;
+}
+
+#edit-field-people-first-name,
+#edit-field-people-city,
+#edit-field-people-phone{
+  overflow:auto;
+}
+
 /*------------------------end people node page--------------------*/
 
 .views-field.views-field-field-people-image.people-image {

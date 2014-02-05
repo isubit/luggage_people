@@ -70,7 +70,7 @@ function luggage_people_views_pre_render(&$view) {
 function luggage_people_preprocess_page(&$vars) {
   // Global node.
   $node = menu_get_object();
-  if (!empty($node) && $node->type == 'people' && arg(2) === null) {
+  if (!empty($node) && $node->type == 'people' || arg(0).arg(1).arg(2) == 'nodeaddpeople') {
     drupal_add_css(drupal_get_path('module', 'luggage_people') . '/css/luggage_people.css');
   }
 }
