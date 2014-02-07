@@ -38,8 +38,8 @@ function pubcookiesiteaccess_permission() {
  */
 function pubcookiesiteaccess_settings() {
   if (!variable_get('pubcookie_id_is_email', 0)) {
-    $form['warning']['#value'] = t('This functionality requires the ID/Email equivalency feature of the pubcookie module to be turned on. You can turn it on by visiting the <a href="@url">pubcookie settings</a> page.', array('@url' => url('admin/settings/pubcookie')));
-    return $form;
+    drupal_set_message(t('The ID/Email equivalency feature of the pubcookie module must be turned on for Pubcookie Site Access to work. Please confirm the pubcookie settings by clicking the Submit button.'), 'error');
+    drupal_goto('admin/config/people/pubcookie');
   }
 
   $pubcookiesiteaccess_usernames = variable_get('pubcookiesiteaccess_usernames', '');
