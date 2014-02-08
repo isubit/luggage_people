@@ -119,7 +119,9 @@ function pubcookie_page() {
     // No record of this user yet in Drupal but user has
     // authenticated with pubcookie. Create new Drupal user.
     user_external_login_register($_pubcookie_user, 'pubcookie');
-    pubcookie_change_ownership($_pubcookie_user);
+    $variables['pubcookie_user'] = $_pubcookie_user;
+    $variables['pubcookie_domain'] = $_pubcookie_domain;
+    module_invoke_all('pubcookie_post_register', $variables);
   }
   else {
     $form_state['uid'] = $account->uid;
@@ -151,8 +153,6 @@ function pubcookie_user_presave(&$edit, $account, $category) {
   // pubcookie_user@pubcookie_domain is also an email address.
   if ($account->is_new && isset($_pubcookie_user)) {
     $edit['mail'] = variable_get('pubcookie_id_is_email', 1) ? "$_pubcookie_user@$_pubcookie_domain" : '';
-    //below function replaced by pubcookie_entity_presave
-    //pubcookie_profile_populate($edit, $account, $_pubcookie_user, $_pubcookie_domain);
   }
 }
 
@@ -326,82 +326,4 @@ function pubcookie_ldap_search($username, $filter = NULL) {
   }
 
   return $records;
-}
-
-
-function pubcookie_change_ownership($_pubcookie_user) {
-  global $user;
-  $records = pubcookie_ldap_search($_pubcookie_user);
-  if (!isset($records[0])) {
-    watchdog('pubcookie', 'No LDAP record found to change ownership');
-    return;
-  } 
-  else {
-    $record = $records[0];
-  }
-  // Assign role faculty | staff | affiliate | student
-  if ($role = user_role_load_by_name($record['userclass'])) {
-    user_multiple_role_edit(array($user->uid), 'add_role', $role->rid);
-  }
-  
-  // Bail out if no node of type 'people' exists.
-  $node_type_names = node_type_get_names();
-  if (!isset($node_type_names['people'])) {
-    return;
-  }
-
-  // Find existing People content that has this user's email attached to it.
-  $query = new EntityFieldQuery();
-  $nids = $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'people')
-    ->fieldCondition('field_people_email', 'email', $_pubcookie_user, 'STARTS_WITH')
-    ->execute();
-
-  if ($nids) {
-    foreach ($nids['node'] as $node_info) {
-      $node = node_load($node_info->nid);
-      $node->uid = $user->uid;
-      watchdog('pubcookie', 'Assigned ownership of node %nid to %name', array('%nid' => $node->nid, '%name' => $user->name));
-      node_save($node);
-    }
-  }
-  else {
-    // If not found, create new People record using LDAP info.
-    $node = new stdClass();
-    $node->type = 'people';
-    node_object_prepare($node);
-    $node->language = LANGUAGE_NONE;
-
-    // Remove [DEPT] from title
-    $pos = strpos($record['title'], '[');
-    $title_only = drupal_substr($record['title'], 0, $pos);
-
-    $node->title = $record['givenname'] . ' ' . $record['sn'];
-    $node->field_people_first_name[LANGUAGE_NONE][0]['value'] = $record['givenname'];
-    $node->field_people_middle_initial[LANGUAGE_NONE][0]['value'] = $record['isupersonmiddleinitial'];
-    $node->field_people_last_name[LANGUAGE_NONE][0]['value'] = $record['sn'];
-    $node->field_people_position[LANGUAGE_NONE][0]['value'] = rtrim($title_only);
-
-    //street
-    $node->field_people_email[LANGUAGE_NONE][0]['email'] = $record['mail'];
-    $node->field_people_street[LANGUAGE_NONE][0]['value'] = $record['street'];
-    $node->field_people_city[LANGUAGE_NONE][0]['value'] = $record['l'];
-    $node->field_people_state[LANGUAGE_NONE][0]['value'] = $record['st'];
-    $node->field_people_postal[LANGUAGE_NONE][0]['value'] = $record['postalcode'];
-
-    $node->field_people_phone[LANGUAGE_NONE][0]['value'] = $record['telephonenumber'];
-
-    $node->path['pathauto'] = TRUE;
-
-// Do our best to match with taxonomy term.
-//        $terms = taxonomy_get_term_by_name($record['userclass'], 'user_category');
-//        if ($terms) {
-//            $term = reset($terms);
-//            $node->field_people_position[LANGUAGE_NONE][0]['tid'] = $term->tid;
-//          };
-    watchdog('pubcookie', 'Creating profile for %name', array('%name' => $user->name));
-
-    // Create new People node for this pubcookie user.
-    node_save($node);
-  }
 }
