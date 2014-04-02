@@ -122,7 +122,7 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 .view.view-people.view-id-people, table {
   border: medium none !important;
   max-width: 740px;
-  min-width: 480px;
+  /*min-width: 480px;*/
 }
 
 .views-field.views-field-title.profile-title.h2 {
