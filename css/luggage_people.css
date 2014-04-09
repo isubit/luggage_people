@@ -194,6 +194,7 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
   font-size: 1.3em;
   font-weight: bold;
   /*text-shadow: 0 0 1 #cccccc;*/
+  margin-bottom: 0.5em;
 }
 
 .views-field.views-field-field-people-position.profile-position {
@@ -225,6 +226,7 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 }
 
 .views-field.views-field-field-people-position {
+    font-style: italic;
 }
 
 .views-field.views-field-field-people-position.profile-position {
@@ -233,4 +235,5 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 
 .views-field-field-people-image {
     float: left;
+    margin-right: 0.5em;
 }
