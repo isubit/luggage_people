@@ -24,7 +24,7 @@ function luggage_people_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => 6,
     'customized' => 0,
   );
   // Translatables
