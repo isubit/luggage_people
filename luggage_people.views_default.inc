@@ -66,6 +66,18 @@ function luggage_people_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'profile-title h2';
+  /* Field: Content: Profile Picture */
+  $handler->display->display_options['fields']['field_people_image']['id'] = 'field_people_image';
+  $handler->display->display_options['fields']['field_people_image']['table'] = 'field_data_field_people_image';
+  $handler->display->display_options['fields']['field_people_image']['field'] = 'field_people_image';
+  $handler->display->display_options['fields']['field_people_image']['label'] = '';
+  $handler->display->display_options['fields']['field_people_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_people_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_people_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_people_image']['settings'] = array(
+    'image_style' => 'people_thumb',
+    'image_link' => 'content',
+  );
   /* Field: Content: Position(s) */
   $handler->display->display_options['fields']['field_people_position']['id'] = 'field_people_position';
   $handler->display->display_options['fields']['field_people_position']['table'] = 'field_data_field_people_position';
@@ -90,6 +102,7 @@ function luggage_people_views_default_views() {
   $handler->display->display_options['fields']['field_people_email']['id'] = 'field_people_email';
   $handler->display->display_options['fields']['field_people_email']['table'] = 'field_data_field_people_email';
   $handler->display->display_options['fields']['field_people_email']['field'] = 'field_people_email';
+  $handler->display->display_options['fields']['field_people_email']['label'] = '';
   $handler->display->display_options['fields']['field_people_email']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_people_email']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_people_email']['element_wrapper_type'] = 'div';
@@ -98,7 +111,7 @@ function luggage_people_views_default_views() {
   $handler->display->display_options['fields']['field_people_website']['id'] = 'field_people_website';
   $handler->display->display_options['fields']['field_people_website']['table'] = 'field_data_field_people_website';
   $handler->display->display_options['fields']['field_people_website']['field'] = 'field_people_website';
-  $handler->display->display_options['fields']['field_people_website']['label'] = 'Web Links';
+  $handler->display->display_options['fields']['field_people_website']['label'] = '';
   $handler->display->display_options['fields']['field_people_website']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_people_website']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_people_website']['element_wrapper_type'] = 'div';
@@ -106,18 +119,6 @@ function luggage_people_views_default_views() {
   $handler->display->display_options['fields']['field_people_website']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_people_website']['delta_limit'] = '2';
   $handler->display->display_options['fields']['field_people_website']['delta_offset'] = '0';
-  /* Field: Content: Profile Picture */
-  $handler->display->display_options['fields']['field_people_image']['id'] = 'field_people_image';
-  $handler->display->display_options['fields']['field_people_image']['table'] = 'field_data_field_people_image';
-  $handler->display->display_options['fields']['field_people_image']['field'] = 'field_people_image';
-  $handler->display->display_options['fields']['field_people_image']['label'] = '';
-  $handler->display->display_options['fields']['field_people_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_people_image']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_people_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_people_image']['settings'] = array(
-    'image_style' => 'people_thumb',
-    'image_link' => 'content',
-  );
   /* Field: Content: Category */
   $handler->display->display_options['fields']['field_people_category']['id'] = 'field_people_category';
   $handler->display->display_options['fields']['field_people_category']['table'] = 'field_data_field_people_category';
@@ -138,6 +139,22 @@ function luggage_people_views_default_views() {
   $handler->display->display_options['sorts']['field_people_last_name_value']['id'] = 'field_people_last_name_value';
   $handler->display->display_options['sorts']['field_people_last_name_value']['table'] = 'field_data_field_people_last_name';
   $handler->display->display_options['sorts']['field_people_last_name_value']['field'] = 'field_people_last_name_value';
+  /* Contextual filter: Content: Has taxonomy term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
+    'people_category' => 'people_category',
+  );
+  $handler->display->display_options['arguments']['tid']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['tid']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['break_phrase'] = TRUE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';

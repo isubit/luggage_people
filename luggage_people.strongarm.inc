@@ -90,16 +90,16 @@ function luggage_people_strongarm() {
         'custom_settings' => TRUE,
       ),
       'full' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'rss' => array(
         'custom_settings' => FALSE,
       ),
       'search_index' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'media_gallery_block' => array(
         'custom_settings' => FALSE,
@@ -110,6 +110,9 @@ function luggage_people_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -117,16 +120,16 @@ function luggage_people_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '24',
-        ),
-        'metatags' => array(
-          'weight' => '26',
-        ),
-        'redirect' => array(
           'weight' => '25',
         ),
-        'xmlsitemap' => array(
+        'metatags' => array(
           'weight' => '27',
+        ),
+        'redirect' => array(
+          'weight' => '26',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '28',
         ),
       ),
       'display' => array(),
