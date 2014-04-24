@@ -119,7 +119,7 @@ function luggage_people_views_default_views() {
   $handler->display->display_options['fields']['field_people_website']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_people_website']['delta_limit'] = '2';
   $handler->display->display_options['fields']['field_people_website']['delta_offset'] = '0';
-  /* Field: Content: Category */
+  /* Field: Content: People Category */
   $handler->display->display_options['fields']['field_people_category']['id'] = 'field_people_category';
   $handler->display->display_options['fields']['field_people_category']['table'] = 'field_data_field_people_category';
   $handler->display->display_options['fields']['field_people_category']['field'] = 'field_people_category';
