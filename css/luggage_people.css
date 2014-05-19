@@ -219,6 +219,10 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
     border-bottom: 1px solid #CCCCCC;
 }
 
+.views-view-grid tr:hover td {
+    background: none;
+}
+
 .views-view-grid td {
     width: 33%;
 }
