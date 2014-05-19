@@ -145,10 +145,6 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
   min-width: 525px;
 }
 
-.views-view-grid tbody tr {
-  border-bottom: 2px solid #CCCCCC;
-}
-
 .view.view-people.view-id-people, table {
   border: medium none !important;
 }
@@ -159,6 +155,10 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 
 .views-view-grid tbody tr {
   border-bottom: 2px solid #CCCCCC;
+}
+
+.views-view-grid td {
+    width: 33%;
 }
 
 view.view-people.view-id-people.view-display-id-people.profile-wrapper {
