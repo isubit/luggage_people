@@ -111,6 +111,7 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
   padding: 2px;
   text-align: center;
   clear: both;
+    margin-bottom: 0;
 }
 
 .view.view-people.view-id-people, table {
@@ -151,14 +152,6 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 
 .views-field.views-field-field-people-position.profile-position {
   font-size: 1.1em;
-}
-
-.views-view-grid tbody tr {
-  border-bottom: 2px solid #CCCCCC;
-}
-
-.views-view-grid td {
-    width: 33%;
 }
 
 view.view-people.view-id-people.view-display-id-people.profile-wrapper {
@@ -212,4 +205,24 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 .views-field-field-people-image {
     float: left;
     margin-right: 0.5em;
+}
+
+/*///////////////////////////////////////////////////*/
+/*/////////////////// Grid View /////////////////////*/
+.views-view-grid {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.views-view-grid tr {
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.views-view-grid td {
+    width: 33%;
+}
+
+.views-view-grid td:not(:last-child) {
+    border-right: 1px solid #ccc;
 }
