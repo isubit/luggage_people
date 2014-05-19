@@ -13,23 +13,20 @@
   padding-bottom: 0px;
 }
 
+.node-people .field-name-field-people-category a{
+    color: #333;
+}
+
 .node-people .field-name-field-people-position {
   color: #990000;
   font-size: 1.4em;
-  text-shadow: 0 0 1px #929292;
 }
 
 .node-people .field-name-field-people-image {
   border: 1px solid;
-  border-radius: 3px 3px 3px 3px;
-  box-shadow: 0 0 2px #717171;
   float: left;
   margin-right: 20px;
   padding: 5px;
-}
-
-.node-people .field-name-field-people-image img {
-  border-radius: 4px 4px 4px 4px;
 }
 
 /* Aligning Address fields */
@@ -108,7 +105,6 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
   background-color: #E9E8DD;
   background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, 0.2) 25%, rgba(0, 0, 0, 0));
   border: 1px solid #CCCCCC;
-  border-radius: 2px 2px 2px 2px;
   color: #4F4F4F;
   font-family: inherit;
   font-weight: 600;
@@ -126,25 +122,16 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 }
 
 .views-field.views-field-field-people-bio.profile-about {
-  /*float: right;*/
-  /*width: 65%;*/
   padding-bottom: 10px;
 }
 
 .views-field.views-field-field-people-email {
   color: #333333;
-  /*float: right;*/
-  /*padding: 0 5px;*/
-  /*width: 30%;*/
-  /*margin-bottom: 1em;*/
-  /*clear: both;*/
 }
 
 .views-field.views-field-field-people-website {
   color: #333333;
-  /*float: right;*/
   padding: 0 5px;
-  /*width: 30%;*/
 }
 
 .views-field.views-field-field-people-position.profile-position {
@@ -174,12 +161,6 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
   border-bottom: 2px solid #CCCCCC;
 }
 
-.views-field-field-people-image .field-content img {
-  border-radius: 4px 4px 4px 4px;
-  box-shadow: 0 0 2px #737373;
-  padding: 5px;
-}
-
 view.view-people.view-id-people.view-display-id-people.profile-wrapper {
   min-width: 480px;
 }
@@ -191,7 +172,6 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 .views-field.views-field-title.profile-title.h2 {
   font-size: 1.3em;
   font-weight: bold;
-  /*text-shadow: 0 0 1 #cccccc;*/
 }
 
 .views-field.views-field-field-people-position.profile-position {
@@ -200,8 +180,6 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 
 .view-display-id-people .views-row {
   background: none repeat scroll 0 0 #EEEEEE;
-  border-radius: 4px 4px 4px 4px;
-  box-shadow: 0 0 2px #C6C6C6;
   padding: 10px;
 }
 
