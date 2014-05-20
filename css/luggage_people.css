@@ -23,10 +23,7 @@
 }
 
 .node-people .field-name-field-people-image {
-  border: 1px solid;
   float: left;
-  margin-right: 20px;
-  padding: 5px;
 }
 
 /* Aligning Address fields */
@@ -79,6 +76,13 @@
 #edit-field-people-city,
 #edit-field-people-phone{
   overflow:auto;
+}
+
+.page-node-edit .node-people-form > div > div {
+    border: 1px solid rgba(52, 52, 52, 0.3);
+    background: rgba(255, 255, 255, 0.5);
+    padding: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 /*------------------------end people node page--------------------*/
@@ -209,24 +213,24 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 
 /*///////////////////////////////////////////////////*/
 /*/////////////////// Grid View /////////////////////*/
-.views-view-grid {
-    background: rgba(255, 255, 255, 0.7);
-}
+/*.views-view-grid {*/
+    /*background: rgba(255, 255, 255, 0.7);*/
+/*}*/
 
-.views-view-grid tr {
-    border-left: 1px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC;
-}
+/*.views-view-grid tr {*/
+    /*border-left: 1px solid #CCCCCC;*/
+    /*border-right: 1px solid #CCCCCC;*/
+    /*border-bottom: 1px solid #CCCCCC;*/
+/*}*/
 
-.views-view-grid tr:hover td {
-    background: none;
-}
+/*.views-view-grid tr:hover td {*/
+    /*background: none;*/
+/*}*/
 
-.views-view-grid td {
-    width: 33%;
-}
+/*.views-view-grid td {*/
+    /*width: 33%;*/
+/*}*/
 
-.views-view-grid td:not(:last-child) {
-    border-right: 1px solid #ccc;
-}
+/*.views-view-grid td:not(:last-child) {*/
+    /*border-right: 1px solid #ccc;*/
+/*}*/
