@@ -241,3 +241,29 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 .field-name-field-people-bio + .field {
     clear: both;
 }
+
+h1 {
+    float: left;
+}
+
+.field-name-field-people-title-category {
+    float: left;
+    margin-left: 1em;
+}
+
+.field-name-field-people-title-category a {
+    display: inline-block;
+    line-height: 40px;
+    font-size: 1.25em;
+    font-style: italic;
+    color: rgba(52, 52, 52, 0.6);
+}
+
+.field-name-field-people-title-category a:hover {
+    color: rgba(52, 52, 52, 0.6);
+}
+
+.region-inner .tabs,
+.region-inner .block {
+    clear: both;
+}
