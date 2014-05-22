@@ -26,10 +26,6 @@
   font-size: 1.4em;
 }
 
-.node-people .field-name-field-people-image {
-  float: left;
-}
-
 /* Aligning Address fields */
 .node-people .field-name-field-people-street,
 .node-people .field-name-field-people-city,
@@ -233,25 +229,15 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 }
 
 /*///////////////////////////////////////////////////*/
-/*/////////////////// Grid View /////////////////////*/
-/*.views-view-grid {*/
-    /*background: rgba(255, 255, 255, 0.7);*/
-/*}*/
+/*/////////////////// People Node View /////////////////////*/
+.node-people .field-name-field-people-image {
+    float: left;
+}
 
-/*.views-view-grid tr {*/
-    /*border-left: 1px solid #CCCCCC;*/
-    /*border-right: 1px solid #CCCCCC;*/
-    /*border-bottom: 1px solid #CCCCCC;*/
-/*}*/
+.field-name-field-people-image + .field:not(.field-name-field-people-bio) {
+    clear: both;
+}
 
-/*.views-view-grid tr:hover td {*/
-    /*background: none;*/
-/*}*/
-
-/*.views-view-grid td {*/
-    /*width: 33%;*/
-/*}*/
-
-/*.views-view-grid td:not(:last-child) {*/
-    /*border-right: 1px solid #ccc;*/
-/*}*/
+.field-name-field-people-bio + .field {
+    clear: both;
+}
