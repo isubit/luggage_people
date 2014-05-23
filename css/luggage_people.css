@@ -72,22 +72,14 @@
 }
 
 #edit-field-people-street,
-#edit-field-people-email {
-  float:left;
-  width: 35%;
-  margin-right: 2em;
-}
-
-#edit-field-people-state{
-  clear: both;
-  float: left;
-  width: 35%;
-  margin-right: 2em;
-}
-
+#edit-field-people-email,
 #edit-field-people-city,
-#edit-field-people-phone{
-  overflow:auto;
+#edit-field-people-state,
+#edit-field-people-postal,
+#edit-field-people-phone {
+  /*float:left;*/
+  width: 35%;
+  /*margin-right: 2em;*/
 }
 
 #edit-field-tags,
@@ -101,6 +93,10 @@
 
 #edit-field-tags {
     border-top: 1px solid #ccc;
+}
+
+.node-people-form .field-multiple-table thead {
+
 }
 /*------------------------end people node page--------------------*/
 
