@@ -1937,7 +1937,7 @@ function luggage_people_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Add Tags to help users find you. They answer the question "what would someone type into Google to find you at the top of the results list? Use commas between tags. E.g., Interest1, Interest2, Interest3, ....');
+  t('Add Tags to help users find you. Answer the question "what would someone type into Google to find you at the top of the results list?" Use commas between tags. E.g., Interest1, Interest2, Interest3, ...');
   t('Advisor');
   t('Affiliation');
   t('Area of Expertise');
