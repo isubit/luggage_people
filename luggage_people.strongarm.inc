@@ -120,16 +120,16 @@ function luggage_people_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '25',
+          'weight' => '19',
         ),
         'metatags' => array(
-          'weight' => '27',
+          'weight' => '21',
         ),
         'redirect' => array(
-          'weight' => '26',
+          'weight' => '20',
         ),
         'xmlsitemap' => array(
-          'weight' => '28',
+          'weight' => '22',
         ),
       ),
       'display' => array(),

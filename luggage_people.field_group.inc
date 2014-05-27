@@ -13,6 +13,33 @@ function luggage_people_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_people_affiliated|node|people|form';
+  $field_group->group_name = 'group_people_affiliated';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'people';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Non-ISU People Fields',
+    'weight' => '18',
+    'children' => array(
+      0 => 'field_people_affiliation',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_people_affiliated|node|people|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_people_faculty|node|people|form';
   $field_group->group_name = 'group_people_faculty';
   $field_group->entity_type = 'node';
@@ -21,10 +48,10 @@ function luggage_people_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Faculty Fields',
-    'weight' => '15',
+    'weight' => '17',
     'children' => array(
       0 => 'field_people_teaching',
-      1 => 'field_people_interdepartmental_p',
+      1 => 'field_people_interdepartmental',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -49,12 +76,15 @@ function luggage_people_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location Fields',
-    'weight' => '13',
+    'weight' => '15',
     'children' => array(
-      0 => 'field_people_email',
-      1 => 'field_people_phone',
-      2 => 'field_people_address',
-      3 => 'field_people_website',
+      0 => 'field_people_city',
+      1 => 'field_people_email',
+      2 => 'field_people_phone',
+      3 => 'field_people_postal',
+      4 => 'field_people_state',
+      5 => 'field_people_street',
+      6 => 'field_people_website',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -79,7 +109,7 @@ function luggage_people_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Student Fields',
-    'weight' => '14',
+    'weight' => '16',
     'children' => array(
       0 => 'field_people_advisor',
       1 => 'field_people_major',

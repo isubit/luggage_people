@@ -10,75 +10,6 @@
 function luggage_people_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-people-field_category'
-  $field_instances['node-people-field_category'] = array(
-    'bundle' => 'people',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'path' => array(
-            'search_path' => 'http://preview.ent.iastate.edu/search/content',
-          ),
-          'target' => '_self',
-        ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 18,
-      ),
-      'full' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'path' => array(
-            'search_path' => 'http://preview.ent.iastate.edu/search/content',
-          ),
-          'target' => '_self',
-        ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 19,
-      ),
-      'search_index' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 0,
-      ),
-      'search_result' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 5,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_category',
-    'label' => 'Category',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 5,
-    ),
-  );
-
   // Exported field_instance: 'node-people-field_people_advisor'
   $field_instances['node-people-field_people_advisor'] = array(
     'bundle' => 'people',
@@ -91,38 +22,38 @@ function luggage_people_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 3,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'above',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 3,
+        'weight' => 6,
       ),
       'search_index' => array(
         'label' => 'above',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 23,
+        'weight' => 6,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 24,
       ),
       'teaser' => array(
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 24,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_people_advisor',
-    'label' => 'Advisor(s)',
+    'label' => 'Advisor',
     'required' => 0,
     'settings' => array(
       'attributes' => array(
@@ -165,33 +96,33 @@ function luggage_people_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 4,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'above',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 4,
+        'weight' => 7,
       ),
       'search_index' => array(
         'label' => 'above',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 16,
+        'weight' => 7,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 21,
       ),
     ),
     'entity_type' => 'node',
@@ -239,37 +170,33 @@ function luggage_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 15,
+        'weight' => 9,
       ),
       'search_result' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_trimmed',
-        'weight' => 2,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -303,7 +230,7 @@ function luggage_people_field_default_field_instances() {
           ),
         ),
       ),
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -313,7 +240,7 @@ function luggage_people_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
@@ -326,41 +253,29 @@ function luggage_people_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'path' => array(
-            'search_path' => 'http://preview.ent.iastate.edu/search/content',
-          ),
-          'target' => '_self',
-        ),
-        'type' => 'taxonomy_term_reference_link',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'path' => array(
-            'search_path' => 'http://preview.ent.iastate.edu/search/content',
-          ),
-          'target' => '_self',
-        ),
-        'type' => 'taxonomy_term_reference_link',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'search_index' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 14,
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 0,
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -398,33 +313,33 @@ function luggage_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 14,
+        'weight' => 16,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 14,
+        'weight' => 16,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 13,
+        'weight' => 16,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 15,
       ),
     ),
     'entity_type' => 'node',
@@ -468,7 +383,7 @@ function luggage_people_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 20,
+      'weight' => 18,
     ),
   );
 
@@ -483,33 +398,33 @@ function luggage_people_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 17,
+        'weight' => 19,
       ),
       'full' => array(
         'label' => 'inline',
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 17,
+        'weight' => 19,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 17,
+        'weight' => 23,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 20,
       ),
     ),
     'entity_type' => 'node',
@@ -547,7 +462,7 @@ function luggage_people_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 12,
+      'weight' => 14,
     ),
   );
 
@@ -556,40 +471,40 @@ function luggage_people_field_default_field_instances() {
     'bundle' => 'people',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'B.S., Biology, Iowa State University, 2014',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'full' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'search_index' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 18,
+        'weight' => 10,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 22,
       ),
     ),
     'entity_type' => 'node',
@@ -633,7 +548,7 @@ function luggage_people_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 12,
     ),
   );
 
@@ -649,35 +564,33 @@ function luggage_people_field_default_field_instances() {
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 10,
+        'weight' => 12,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 10,
+        'weight' => 12,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 22,
+        'weight' => 12,
       ),
       'search_result' => array(
         'label' => 'hidden',
-        'module' => 'email',
         'settings' => array(),
-        'type' => 'email_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'email',
         'settings' => array(),
-        'type' => 'email_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -694,7 +607,69 @@ function luggage_people_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 17,
+      'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance: 'node-people-field_people_expertise'
+  $field_instances['node-people-field_people_expertise'] = array(
+    'bundle' => 'people',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The broad subdiscipline in which you work. E.g., Insect Virology, Plant Genomics, Wildlife Ecology. If you work in more than one area separate them with commas. Do not create an exhaustive list; use the Tags field for that.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 2,
+      ),
+      'search_index' => array(
+        'label' => 'inline',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+      'search_result' => array(
+        'label' => 'inline',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'inline',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_people_expertise',
+    'label' => 'Area of Expertise',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 9,
     ),
   );
 
@@ -709,32 +684,32 @@ function luggage_people_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 21,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 24,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 21,
+        'weight' => 20,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -796,7 +771,7 @@ function luggage_people_field_default_field_instances() {
           'image_style' => 'large',
         ),
         'type' => 'image',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -806,29 +781,37 @@ function luggage_people_field_default_field_instances() {
           'image_style' => 'people_thumb',
         ),
         'type' => 'image',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 20,
+        'weight' => 8,
       ),
       'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 21,
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'people_thumb',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'people_thumb',
+        ),
+        'type' => 'image',
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -877,12 +860,12 @@ function luggage_people_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 6,
+      'weight' => 11,
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_interdepartmental_p'
-  $field_instances['node-people-field_people_interdepartmental_p'] = array(
+  // Exported field_instance: 'node-people-field_people_interdepartmental'
+  $field_instances['node-people-field_people_interdepartmental'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
     'deleted' => 0,
@@ -890,80 +873,68 @@ function luggage_people_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
+        'type' => 'link_default',
+        'weight' => 3,
       ),
       'full' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'inline',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
+        'type' => 'link_default',
+        'weight' => 3,
       ),
       'search_index' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'inline',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 19,
+        'type' => 'link_default',
+        'weight' => 3,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_people_interdepartmental_p',
+    'field_name' => 'field_people_interdepartmental',
     'label' => 'Interdepartmental Programs',
     'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-          'wysiwyg' => 'wysiwyg',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => 0,
-            ),
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'wysiwyg' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
       ),
-      'text_processing' => 0,
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'required',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 'optional',
       'user_register_form' => FALSE,
+      'validate_url' => 1,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 13,
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 26,
     ),
   );
 
@@ -978,32 +949,32 @@ function luggage_people_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 22,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 23,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 12,
+        'weight' => 21,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -1063,33 +1034,33 @@ function luggage_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'search_index' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 11,
+        'weight' => 5,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 23,
       ),
     ),
     'entity_type' => 'node',
@@ -1148,32 +1119,32 @@ function luggage_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 24,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 21,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 22,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
@@ -1221,6 +1192,80 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-people-field_people_other_affiliations'
+  $field_instances['node-people-field_people_other_affiliations'] = array(
+    'bundle' => 'people',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If you have another professional affiliation (e.g., you are a collaborator at a different institution) list that here. Do not list interdepartmental programs here.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 4,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 4,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_people_other_affiliations',
+    'label' => 'Other Affiliations',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'required',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 'optional',
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-people-field_people_phone'
   $field_instances['node-people-field_people_phone'] = array(
     'bundle' => 'people',
@@ -1233,33 +1278,33 @@ function luggage_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 12,
+        'weight' => 14,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 12,
+        'weight' => 14,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 14,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'node',
@@ -1303,7 +1348,7 @@ function luggage_people_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 18,
+      'weight' => 22,
     ),
   );
 
@@ -1329,7 +1374,7 @@ function luggage_people_field_default_field_instances() {
         'weight' => 1,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -1339,8 +1384,8 @@ function luggage_people_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
+        'type' => 'text_plain',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1352,35 +1397,9 @@ function luggage_people_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_people_position',
-    'label' => 'Position(s)',
-    'required' => 0,
+    'label' => 'Position',
+    'required' => 1,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-          'wysiwyg' => 'wysiwyg',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => 0,
-            ),
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'wysiwyg' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
-      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1391,7 +1410,7 @@ function luggage_people_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -1407,33 +1426,33 @@ function luggage_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 16,
+        'weight' => 18,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 16,
+        'weight' => 18,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 18,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'node',
@@ -1474,10 +1493,10 @@ function luggage_people_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'size' => 25,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 20,
     ),
   );
 
@@ -1493,33 +1512,33 @@ function luggage_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 15,
+        'weight' => 17,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 15,
+        'weight' => 17,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 17,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 18,
       ),
     ),
     'entity_type' => 'node',
@@ -1563,7 +1582,7 @@ function luggage_people_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 19,
     ),
   );
 
@@ -1579,33 +1598,33 @@ function luggage_people_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 13,
+        'weight' => 15,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 13,
+        'weight' => 15,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 15,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 17,
       ),
     ),
     'entity_type' => 'node',
@@ -1649,7 +1668,7 @@ function luggage_people_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 19,
+      'weight' => 17,
     ),
   );
 
@@ -1658,40 +1677,40 @@ function luggage_people_field_default_field_instances() {
     'bundle' => 'people',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'The URL for the ISU Catalog listing of PLPM courses is http://catalog.iastate.edu/azcourses/pl_p/',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 9,
+        'weight' => 11,
       ),
       'full' => array(
         'label' => 'above',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 9,
+        'weight' => 11,
       ),
       'search_index' => array(
         'label' => 'above',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',
@@ -1723,7 +1742,7 @@ function luggage_people_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 15,
+      'weight' => 27,
     ),
   );
 
@@ -1738,32 +1757,32 @@ function luggage_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 23,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 22,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 8,
+        'weight' => 19,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',
@@ -1794,35 +1813,33 @@ function luggage_people_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 11,
+        'weight' => 13,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 11,
+        'weight' => 13,
       ),
       'search_index' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 7,
+        'weight' => 13,
       ),
       'search_result' => array(
         'label' => 'hidden',
-        'module' => 'link',
         'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'link',
         'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -1842,7 +1859,7 @@ function luggage_people_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'rel_remove' => 'default',
-      'title' => 'required',
+      'title' => 'optional',
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -1863,53 +1880,40 @@ function luggage_people_field_default_field_instances() {
     'bundle' => 'people',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Add Tags to help users find related content. Enter Tags as a comma delimited string.
-Interest1, Interest2, Interest3, ....',
+    'description' => 'Add Tags to help users find you. They answer the question "what would someone type into Google to find you at the top of the results list? Use commas between tags. E.g., Interest1, Interest2, Interest3, ....',
     'display' => array(
       'default' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(
-          'path' => array(
-            'search_path' => 'http://preview.ent.iastate.edu/search/content',
-          ),
-          'target' => '_self',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 18,
+        'weight' => 20,
       ),
       'full' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
-        'settings' => array(
-          'path' => array(
-            'search_path' => 'http://preview.ent.iastate.edu/search/content',
-          ),
-          'target' => '_self',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 18,
+        'weight' => 20,
       ),
       'search_index' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 9,
+        'weight' => 24,
       ),
       'search_result' => array(
         'label' => 'inline',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'inline',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -1933,25 +1937,27 @@ Interest1, Interest2, Interest3, ....',
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Add Tags to help users find related content. Enter Tags as a comma delimited string.
-Interest1, Interest2, Interest3, ....');
-  t('Advisor(s)');
+  t('Add Tags to help users find you. They answer the question "what would someone type into Google to find you at the top of the results list? Use commas between tags. E.g., Interest1, Interest2, Interest3, ....');
+  t('Advisor');
   t('Affiliation');
+  t('Area of Expertise');
+  t('B.S., Biology, Iowa State University, 2014');
   t('Biography');
   t('CV');
-  t('Category');
   t('City');
   t('Education');
   t('Email');
   t('First Name');
   t('Given Name');
+  t('If you have another professional affiliation (e.g., you are a collaborator at a different institution) list that here. Do not list interdepartmental programs here.');
   t('Interdepartmental Programs');
   t('Last Name');
   t('Major');
   t('Middle Initial');
+  t('Other Affiliations');
   t('People Category');
   t('Phone');
-  t('Position(s)');
+  t('Position');
   t('Postal Code');
   t('Profile Picture');
   t('State');
@@ -1959,6 +1965,8 @@ Interest1, Interest2, Interest3, ....');
   t('Surname');
   t('Tags');
   t('Teaching');
+  t('The URL for the ISU Catalog listing of PLPM courses is http://catalog.iastate.edu/azcourses/pl_p/');
+  t('The broad subdiscipline in which you work. E.g., Insect Virology, Plant Genomics, Wildlife Ecology. If you work in more than one area separate them with commas. Do not create an exhaustive list; use the Tags field for that.');
   t('Title');
   t('Website');
 
