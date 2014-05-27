@@ -1880,7 +1880,7 @@ function luggage_people_field_default_field_instances() {
     'bundle' => 'people',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Add Tags to help users find you. They answer the question "what would someone type into Google to find you at the top of the results list? Use commas between tags. E.g., Interest1, Interest2, Interest3, ....',
+    'description' => 'Add Tags to help users find you. Answer the question "what would someone type into Google to find you at the top of the results list?" Use commas between tags. E.g., Interest1, Interest2, Interest3, ...',
     'display' => array(
       'default' => array(
         'label' => 'inline',
