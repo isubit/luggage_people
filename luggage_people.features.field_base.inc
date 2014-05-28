@@ -669,6 +669,7 @@ function luggage_people_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         'mr' => 'Mr.',
+        'ms' => 'Ms.',
         'mrs' => 'Mrs.',
         'miss' => 'Miss',
         'dr' => 'Dr.',
