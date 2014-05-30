@@ -1677,7 +1677,7 @@ function luggage_people_field_default_field_instances() {
     'bundle' => 'people',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'The URL for the ISU Catalog listing of PLPM courses is http://catalog.iastate.edu/azcourses/pl_p/',
+    'description' => 'The URL for the ISU Catalog listing of courses is http://catalog.iastate.edu/azcourses/',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1965,7 +1965,7 @@ function luggage_people_field_default_field_instances() {
   t('Surname');
   t('Tags');
   t('Teaching');
-  t('The URL for the ISU Catalog listing of PLPM courses is http://catalog.iastate.edu/azcourses/pl_p/');
+  t('The URL for the ISU Catalog listing of courses is http://catalog.iastate.edu/azcourses/');
   t('The broad subdiscipline in which you work. E.g., Insect Virology, Plant Genomics, Wildlife Ecology. If you work in more than one area separate them with commas. Do not create an exhaustive list; use the Tags field for that.');
   t('Title');
   t('Website');
