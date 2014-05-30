@@ -84,7 +84,6 @@ function luggage_people_field_group_info() {
       3 => 'field_people_postal',
       4 => 'field_people_state',
       5 => 'field_people_street',
-      6 => 'field_people_website',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
