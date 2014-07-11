@@ -182,20 +182,53 @@ function luggage_people_pubcookie_post_register($variables) {
 
 function luggage_people_form_people_node_form_alter(&$form, &$form_state) {
   if(arg(2) == 'edit') {
+
+    ////////////////////// SET PLACEHOLDER TEXT //////////////////////////////////////////////////////////
+    // Name
+    $form['field_people_first_name'][LANGUAGE_NONE][0]['value']['#attributes']['placeholder'] = 'John';
+    $form['field_people_middle_initial'][LANGUAGE_NONE][0]['value']['#attributes']['placeholder'] = 'J';
+    $form['field_people_last_name'][LANGUAGE_NONE][0]['value']['#attributes']['placeholder'] = 'Doe';
+    // Tags placeholder text
+    $form['field_tags'][LANGUAGE_NONE]['#attributes']['placeholder'] = 'interest, interest two, interest 3';
+    // Position
+    $i = 0;
+    while(isset($form['field_people_position'][LANGUAGE_NONE][$i])) {
+      $form['field_people_position'][LANGUAGE_NONE][$i]['value']['#attributes']['placeholder'] = 'Professor';
+      $i++;
+    }
+    // Area of Expertise
+    $form['field_people_expertise'][LANGUAGE_NONE]['#attributes']['placeholder'] = 'Insect Virology';
+    // Other Affiliations
+    $form['field_people_affiliation'][LANGUAGE_NONE]['#after_build'][] = 'people_node_form_field_people_affiliation_after_build';
+    // Profile image
     $form['field_people_image'][LANGUAGE_NONE]['#after_build'][] = 'people_node_form_alter_after_build';
-//    $user = user_load($form['uid']['#value']);
-//    $name = 'John Doe';
+    // Education
+    $i = 0;
+    while(isset($form['field_people_education'][LANGUAGE_NONE][$i])) {
+      $form['field_people_education'][LANGUAGE_NONE][$i]['value']['#attributes']['placeholder'] = 'Ph.D., Molecular Biology, Iowa State University';
+      $i++;
+    }
 
-//    $form['field_people_image'][LANGUAGE_NONE][0]['#default_value']['alt'] = 'This is a profile picture of ' . $name;
-//    $form['field_people_image'][LANGUAGE_NONE][0]['#default_value']['title'] = $name;
-
+    $name = $form['title']['#default_value'];
+    if($form['field_people_image'][LANGUAGE_NONE][0]['#default_value']['alt'] == '')
+      $form['field_people_image'][LANGUAGE_NONE][0]['#default_value']['alt'] = 'This is a profile picture of ' . $name;
+    if($form['field_people_image'][LANGUAGE_NONE][0]['#default_value']['title'] == '')
+      $form['field_people_image'][LANGUAGE_NONE][0]['#default_value']['title'] = $name;
   }
 }
 
-function people_node_form_alter_after_build($element, &$form_state) {
-  if($element) {
-    $element[0]['alt']['#attributes']['placeholder'] = 'Profile picture of ' . $form_state['node']->title;
-    $element[0]['title']['#attributes']['placeholder'] = $form_state['node']->title;
+function people_node_form_field_people_affiliation_after_build($element, &$form_state) {
+  $i = 0;
+  while(isset($element[$i])) {
+    $element[$i]['url']['#attributes']['placeholder'] = 'http://otheruniversity.edu/dept';
+    $element[$i]['title']['#attributes']['placeholder'] = 'Collaborating Professor';
+    $i++;
   }
+  return $element;
+}
+
+function people_node_form_alter_after_build($element, &$form_state) {
+  $element[0]['alt']['#attributes']['placeholder'] = 'Profile picture of ' . $form_state['node']->title;
+  $element[0]['title']['#attributes']['placeholder'] = $form_state['node']->title;
   return $element;
 }
