@@ -167,6 +167,10 @@ function luggage_people_pubcookie_post_register($variables) {
 
     $node->field_people_phone[LANGUAGE_NONE][0]['value'] = $record['telephonenumber'];
 
+    //image
+    $node->field_people_image[LANGUAGE_NONE][0]['alt'] = 'Profile picture of ' . $node->title;
+    $node->field_people_image[LANGUAGE_NONE][0]['title'] = $node->title;
+
     $node->path['pathauto'] = TRUE;
 
     watchdog('luggage_people', 'Creating profile for %name', array('%name' => $user->name));
@@ -174,4 +178,24 @@ function luggage_people_pubcookie_post_register($variables) {
     // Create new People node for this pubcookie user.
     node_save($node);
   }
+}
+
+function luggage_people_form_people_node_form_alter(&$form, &$form_state) {
+  if(arg(2) == 'edit') {
+    $form['field_people_image'][LANGUAGE_NONE]['#after_build'][] = 'people_node_form_alter_after_build';
+//    $user = user_load($form['uid']['#value']);
+//    $name = 'John Doe';
+
+//    $form['field_people_image'][LANGUAGE_NONE][0]['#default_value']['alt'] = 'This is a profile picture of ' . $name;
+//    $form['field_people_image'][LANGUAGE_NONE][0]['#default_value']['title'] = $name;
+
+  }
+}
+
+function people_node_form_alter_after_build($element, &$form_state) {
+  if($element) {
+    $element[0]['alt']['#attributes']['placeholder'] = 'Profile picture of ' . $form_state['node']->title;
+    $element[0]['title']['#attributes']['placeholder'] = $form_state['node']->title;
+  }
+  return $element;
 }
