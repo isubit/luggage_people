@@ -252,11 +252,12 @@ h1 {
     color: rgba(52, 52, 52, 0.6);
 }
 
-.field-name-field-people-title-category a:hover {
-    color: rgba(52, 52, 52, 0.6);
-}
-
 .region-inner .tabs,
 .region-inner .block {
     clear: both;
+}
+
+.field-name-field-people-education .field-items,
+.field-name-field-people-teaching .field-items {
+    text-indent: 15px;
 }
