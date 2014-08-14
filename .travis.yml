@@ -41,6 +41,8 @@ before_script:
   # create new site, stubbing sendmail path with true to prevent delivery errors and manually resolving drush path
   - mysql -e 'create database luggage_people'
   - php -d sendmail_path=`which true` ~/.composer/vendor/bin/drush.php --yes core-quick-drupal --profile=testing --no-server --db-url=mysql://root:@127.0.0.1/luggage_people
+  
+  - drush si testing -y --db-url=mysql://travis@localhost/luggage_people --site-name=luggage_people --account-name=root install_configure_form.update_status_module='array(FALSE,FALSE)'
 
   # reference and enable luggage_people in build site
   - drush --yes en luggage_people luggage_contrib luggage_roles luggage_solr luggage_ckeditor luggage_core
