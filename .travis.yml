@@ -43,14 +43,15 @@ before_script:
   - php -d sendmail_path=`which true` ~/.composer/vendor/bin/drush.php --yes core-quick-drupal --profile=testing --no-server --db-url=mysql://root:@127.0.0.1/luggage_people
 
   # reference and enable luggage_people in build site
-  - ln -s $(readlink -e $(cd -)) luggage_people/drupal/sites/all/modules/luggage_people
-  - ls
-  - cd DB/drupal
-  - ls
   - drush --yes en luggage_people luggage_contrib luggage_roles luggage_solr luggage_ckeditor luggage_core
 
   # start a web server on port 8080, run in the background; wait for initialization
-  - drush runserver 127.0.0.1:8080 &
-  - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
+  - drush runserver --server=builtin 8080 &
+  # - drush runserver 127.0.0.1:8080 &
+  # - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
 
 #script: drush test-run 'Travis-CI Drupal Module Example' --uri=http://127.0.0.1:8080
+
+notifications:
+  email: false
+  irc: "irc.freenode.org##lugage"
