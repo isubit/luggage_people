@@ -10,7 +10,7 @@ before_script:
   #Use sed to replace the SSH URL with the public URL, then initialize submodules before_install:
   # - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
   # - git submodule update --init --recursive
-  - git clone https://github.com/isubit/luggage.git
+  - git clone --branch 7.x http://git.drupal.org/project/drupal.git drupal
   - composer self-update
   - pyrus channel-discover pear.drush.org
   - pyrus install drush/drush-5.10.0.0
@@ -23,12 +23,12 @@ before_script:
   - sudo apt-get install -y --force-yes php5-cgi php5-mysql
 
 # create new site and manually resolving drush path
-  - mysql -e 'create database luggage;'
+  - mysql -e 'create database drupal;'
   
 #  - php -d sendmail_path=`which true`
   - ls
-  - cd luggage
-  - drush si testing -y --db-url=mysql://travis@localhost/luggage --site-name=luggage --account-name=root install_configure_form.update_status_module='array(FALSE,FALSE)'
+  - cd drupal
+  - drush si testing -y --db-url=mysql://travis@localhost/drupal --site-name=drupal --account-name=root install_configure_form.update_status_module='array(FALSE,FALSE)'
   - ls
   - drush --yes en simpletest
   
