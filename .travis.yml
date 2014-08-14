@@ -2,15 +2,14 @@ language: php
 
 php:
   - 5.3
-  
-env:
-  - DB=luggage_people
-  - FEATURE=luggage_people
 
 mysql:
-  database: DB
+  database: luggage_people
   username: root
   encoding: utf8
+  
+git:
+  submodules: false
 
 before_install:
   - sudo apt-get update > /dev/null
@@ -28,16 +27,27 @@ install:
 
 before_script:
   # navigate out of module directory to prevent blown stack by recursive module lookup
-  - cd ../..
+  - ls
+  - cd ..
+  - ls
+  - git clone https://github.com/isubit/luggage_contrib.git
+  - git clone https://github.com/isubit/luggage_roles.git
+  - git clone https://github.com/isubit/luggage_solr.git
+  - git clone https://github.com/isubit/luggage_ckeditor.git
+  - git clone https://github.com/isubit/luggage_core.git
+  - cd ..
+  - ls
 
   # create new site, stubbing sendmail path with true to prevent delivery errors and manually resolving drush path
   - mysql -e 'create database luggage_people'
-  - php -d sendmail_path=`which true` ~/.composer/vendor/bin/drush.php --yes core-quick-drupal --profile=testing --no-server --db-url=mysql://root:@127.0.0.1/DB
+  - php -d sendmail_path=`which true` ~/.composer/vendor/bin/drush.php --yes core-quick-drupal --profile=testing --no-server --db-url=mysql://root:@127.0.0.1/luggage_people
 
-  # reference and enable travis_ci_drupal_module_example in build site
-  - ln -s $(readlink -e $(cd -)) DB/drupal/sites/all/modules/FEATURE
+  # reference and enable luggage_people in build site
+  - ln -s $(readlink -e $(cd -)) luggage_people/drupal/sites/all/modules/luggage_people
+  - ls
   - cd DB/drupal
-  - drush --yes pm-enable FEATURE
+  - ls
+  - drush --yes en luggage_people luggage_contrib luggage_roles luggage_solr luggage_ckeditor luggage_core
 
   # start a web server on port 8080, run in the background; wait for initialization
   - drush runserver 127.0.0.1:8080 &
