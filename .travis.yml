@@ -2,57 +2,47 @@ language: php
 
 php:
   - 5.3
-
-mysql:
-  database: luggage_people
-  username: root
-  encoding: utf8
   
 git:
   submodules: false
 
-before_install:
-  - sudo apt-get update > /dev/null
+before_script:
+  #Use sed to replace the SSH URL with the public URL, then initialize submodules before_install:
+  # - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  # - git submodule update --init --recursive
+  
+  - composer self-update
+  - pyrus channel-discover pear.drush.org
+  - pyrus install drush/drush-5.10.0.0
+  - phpenv rehash
+  # stubbing sendmail path with true to prevent delivery errors
+  - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 
-install:
-  # install php packages required for running a web server from drush on php 5.3
+# install php packages required for running a web server from drush on php 5.3
+  - sudo apt-get update > /dev/null
   - sudo apt-get install -y --force-yes php5-cgi php5-mysql
 
-  # add composer's global bin directory to the path
-  # see: https://github.com/drush-ops/drush#install---composer
-  - export PATH="$HOME/.composer/vendor/bin:$PATH"
-
-  # install drush globally
-  - composer global require drush/drush:6.*
-
-before_script:
-  # navigate out of module directory to prevent blown stack by recursive module lookup
-  - ls
-  - cd ..
-  - ls
-  - git clone https://github.com/isubit/luggage_contrib.git
-  - git clone https://github.com/isubit/luggage_roles.git
-  - git clone https://github.com/isubit/luggage_solr.git
-  - git clone https://github.com/isubit/luggage_ckeditor.git
-  - git clone https://github.com/isubit/luggage_core.git
-  - cd ..
-  - ls
-
-  # create new site, stubbing sendmail path with true to prevent delivery errors and manually resolving drush path
-  - mysql -e 'create database luggage_people'
-  - php -d sendmail_path=`which true` ~/.composer/vendor/bin/drush.php --yes core-quick-drupal --profile=testing --no-server --db-url=mysql://root:@127.0.0.1/luggage_people
+# create new site and manually resolving drush path
+  - mysql -e 'create database luggage_people;'
   
+#  - php -d sendmail_path=`which true`
   - drush si testing -y --db-url=mysql://travis@localhost/luggage_people --site-name=luggage_people --account-name=root install_configure_form.update_status_module='array(FALSE,FALSE)'
+  - drush --yes en simpletest
+  
+# Install Omega and Suitcase
+  # - drush en -y suitcase
+  # - drush vset theme_default suitcase
 
-  # reference and enable luggage_people in build site
-  - drush --yes en luggage_people luggage_contrib luggage_roles luggage_solr luggage_ckeditor luggage_core
-
-  # start a web server on port 8080, run in the background; wait for initialization
+#Install all the Luggage features.
+  # - drush -v en -y luggage_announcements luggage_biblio luggage_ckeditor luggage_contrib luggage_core luggage_events luggage_events_solr luggage_indicator luggage_news luggage_people luggage_people_solr luggage_placeholder luggage_projects luggage_resources luggage_resources_solr luggage_roles luggage_roles_solr luggage_seo luggage_solr luggage_ui luggage_vars suitcase_config suitcase_frontpanel
+  # - drush fra -y
+  - drush cc all --yes
   - drush runserver --server=builtin 8080 &
-  # - drush runserver 127.0.0.1:8080 &
-  # - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
+  - sleep 4
+  # - drush vset --yes simpletest_verbose FALSE
 
-#script: drush test-run 'Travis-CI Drupal Module Example' --uri=http://127.0.0.1:8080
+# script:
+  # - drush test-run 'luggage' --debug --uri=http://127.0.0.1:8080
 
 notifications:
   email: false
