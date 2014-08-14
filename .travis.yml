@@ -38,10 +38,11 @@ before_script:
   - git clone https://github.com/isubit/luggage_core.git
   - git clone https://github.com/isubit/luggage_roles.git
   - drush --yes pm-enable luggage_people luggage_ckeditor luggage_contrib luggage_core luggage_roles
+  - drush fra -y
 
   # start a web server on port 8080, run in the background; wait for initialization
   - drush runserver 127.0.0.1:8080 &
-  - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
+  # - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
 
 # script: drush test-run 'Travis-CI Drupal Module Example' --uri=http://127.0.0.1:8080
 
