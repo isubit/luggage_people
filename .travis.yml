@@ -40,6 +40,9 @@ before_script:
   - drush --yes pm-enable luggage_people luggage_ckeditor luggage_contrib luggage_core luggage_roles
   - drush fra -y
   - drush cc all
+  
+  - drush en simpletest -y
+  
   # start a web server on port 8080, run in the background; wait for initialization
   - drush runserver --server=builtin 8080 &
   - sleep 4
