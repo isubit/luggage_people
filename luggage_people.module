@@ -167,6 +167,10 @@ function luggage_people_pubcookie_post_register($variables) {
 
     $node->field_people_phone[LANGUAGE_NONE][0]['value'] = $record['telephonenumber'];
 
+    //image
+    $node->field_people_image[LANGUAGE_NONE][0]['alt'] = 'Profile picture of ' . $node->title;
+    $node->field_people_image[LANGUAGE_NONE][0]['title'] = $node->title;
+
     $node->path['pathauto'] = TRUE;
 
     watchdog('luggage_people', 'Creating profile for %name', array('%name' => $user->name));
