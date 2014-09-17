@@ -15,6 +15,7 @@
 .view-grouping .view-grouping-content table {
     border: none;
     margin-bottom: 0;
+    margin-left: 40px;
 }
 
 .view-grouping .view-grouping-content > h3 {
