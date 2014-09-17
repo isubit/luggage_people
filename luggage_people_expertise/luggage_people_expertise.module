@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the luggage_people_expertise feature.
+ */
+
+include_once 'luggage_people_expertise.features.inc';
