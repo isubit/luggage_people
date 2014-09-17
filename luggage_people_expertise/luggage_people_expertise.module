@@ -11,7 +11,6 @@ include_once 'luggage_people_expertise.features.inc';
  */
 function luggage_people_expertise_views_pre_view(&$view, &$display_id, &$args) {
   if($view->name == 'expertise') {
-      print_r($view);
     drupal_add_css(drupal_get_path('module', 'luggage_people_expertise').'/css/luggage_people_expertise.css');
   }
 }
