@@ -1,6 +1,5 @@
 .view-grouping {
     border: 1px solid #ddd;
-    margin-bottom: 20px;
     padding: 10px 15px;
     background: rgba(255,255,255,0.5);
 }
@@ -8,8 +7,20 @@
 .view-grouping-header {
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 10px;
     color: #555;
+    float: left;
+    width: 200px;
+}
+
+.view-grouping .view-grouping-content {
+    float: left;
+}
+
+.view-grouping:after,
+.view-grouping:before {
+    content: " ";
+    clear: both;
+    display: block;
 }
 
 .view-grouping .view-grouping-content table {
