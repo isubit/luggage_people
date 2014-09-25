@@ -12,10 +12,6 @@ article.node {
   width: 100%;
 }
 
-/*.node-people .field {*/
-  /*padding: 5px 5px 5px 0px;*/
-/*}*/
-
 .node-people .field-name-field-people-category{
   padding-top: 0px;
   padding-bottom: 0px;
@@ -29,15 +25,6 @@ article.node {
   color: #990000;
   font-size: 1.4em;
 }
-
-/* Aligning Address fields */
-/*.node-people .field-name-field-people-street,*/
-/*.node-people .field-name-field-people-city,*/
-/*.node-people .field-name-field-people-state,*/
-/*.node-people .field-name-field-people-postal {*/
-  /*float: left;*/
-  /*padding-right: 5px;*/
-/*}*/
 
 /* clearing float following postal float */
 .node-people .field-name-field-people-postal + div {
@@ -263,13 +250,10 @@ h1 {
     clear: both;
 }
 
-.field-name-field-people-education .field-items,
-.field-name-field-people-teaching .field-items {
-    text-indent: 15px;
-}
-
 .field.field-name-field-people-expertise,
 .field.field-name-field-people-other-affiliations,
+.field.field-name-field-people-interdepartmental,
+.field.field-name-field-people-teaching,
 .field.field-name-field-people-major,
 .field.field-name-field-people-advisor,
 .field.field-name-field-people-education,
@@ -287,6 +271,8 @@ h1 {
 
 .field.field-name-field-people-expertise .field-label,
 .field.field-name-field-people-other-affiliations .field-label,
+.field.field-name-field-people-interdepartmental .field-label,
+.field.field-name-field-people-teaching .field-label,
 .field.field-name-field-people-major .field-label,
 .field.field-name-field-people-advisor .field-label,
 .field.field-name-field-people-education .field-label,
@@ -298,7 +284,6 @@ h1 {
 .field.field-name-field-people-state .field-label,
 .field.field-name-field-people-postal .field-label,
 .field.field-name-field-people-cv .field-label {
-    /*background: rgba(255,255,255,0.5);*/
     width: 150px;
     padding: 5px;
     color: #666;
@@ -307,6 +292,8 @@ h1 {
 
 .field.field-name-field-people-expertise .field-items,
 .field.field-name-field-people-other-affiliations .field-items,
+.field.field-name-field-people-interdepartmental .field-items,
+.field.field-name-field-people-teaching .field-items,
 .field.field-name-field-people-major .field-items,
 .field.field-name-field-people-advisor .field-items,
 .field.field-name-field-people-education .field-items,
@@ -319,16 +306,14 @@ h1 {
 .field.field-name-field-people-postal .field-items,
 .field.field-name-field-people-cv .field-items {
     padding: 5px;
-    /*background: rgba(255,255,255,0.9);*/
-    /*width: 100px;*/
-    /*padding: 5px;*/
-    /*color: #666;*/
     border-left: 2px solid #bbb;
     display: inline-block;
 }
 
 .field.field-name-field-people-expertise .field-item,
 .field.field-name-field-people-other-affiliations .field-item,
+.field.field-name-field-people-interdepartmental .field-item,
+.field.field-name-field-people-teaching .field-item,
 .field.field-name-field-people-major .field-item,
 .field.field-name-field-people-advisor .field-item,
 .field.field-name-field-people-education .field-item,
@@ -340,7 +325,6 @@ h1 {
 .field.field-name-field-people-state .field-item,
 .field.field-name-field-people-postal .field-item,
 .field.field-name-field-people-cv .field-item {
-    /*width: 100%;*/
     display: block;
 }
 
