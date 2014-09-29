@@ -8,14 +8,6 @@ article.node {
     color: #444;
 }
 
-.node-people {
-  width: 100%;
-}
-
-/*.node-people .field {*/
-  /*padding: 5px 5px 5px 0px;*/
-/*}*/
-
 .node-people .field-name-field-people-category{
   padding-top: 0px;
   padding-bottom: 0px;
@@ -29,15 +21,6 @@ article.node {
   color: #990000;
   font-size: 1.4em;
 }
-
-/* Aligning Address fields */
-/*.node-people .field-name-field-people-street,*/
-/*.node-people .field-name-field-people-city,*/
-/*.node-people .field-name-field-people-state,*/
-/*.node-people .field-name-field-people-postal {*/
-  /*float: left;*/
-  /*padding-right: 5px;*/
-/*}*/
 
 /* clearing float following postal float */
 .node-people .field-name-field-people-postal + div {
