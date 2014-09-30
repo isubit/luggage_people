@@ -248,6 +248,7 @@ h1 {
 
 .field.field-name-field-people-expertise,
 .field.field-name-field-people-other-affiliations,
+.field.field-name-field-people-affiliation,
 .field.field-name-field-people-interdepartmental,
 .field.field-name-field-people-teaching,
 .field.field-name-field-people-major,
@@ -267,6 +268,7 @@ h1 {
 
 .field.field-name-field-people-expertise .field-label,
 .field.field-name-field-people-other-affiliations .field-label,
+.field.field-name-field-people-affiliation .field-label,
 .field.field-name-field-people-interdepartmental .field-label,
 .field.field-name-field-people-teaching .field-label,
 .field.field-name-field-people-major .field-label,
@@ -288,6 +290,7 @@ h1 {
 
 .field.field-name-field-people-expertise .field-items,
 .field.field-name-field-people-other-affiliations .field-items,
+.field.field-name-field-people-affiliation .field-items,
 .field.field-name-field-people-interdepartmental .field-items,
 .field.field-name-field-people-teaching .field-items,
 .field.field-name-field-people-major .field-items,
@@ -308,6 +311,7 @@ h1 {
 
 .field.field-name-field-people-expertise .field-item,
 .field.field-name-field-people-other-affiliations .field-item,
+.field.field-name-field-people-affiliation .field-item,
 .field.field-name-field-people-interdepartmental .field-item,
 .field.field-name-field-people-teaching .field-item,
 .field.field-name-field-people-major .field-item,
