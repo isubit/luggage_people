@@ -59,3 +59,6 @@ script:
 notifications:
   email: false
   irc: "irc.freenode.org##luggage"
+    
+    on_success: never
+    on_failure: always
