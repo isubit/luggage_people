@@ -103,7 +103,7 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 }
 
 .view-content > h3 {
-  background-color: #E9E8DD;
+ /* background-color: #E9E8DD;
   background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, 0.2) 25%, rgba(0, 0, 0, 0));
   border: 1px solid #CCCCCC;
   color: #4F4F4F;
@@ -112,7 +112,12 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
   padding: 2px;
   text-align: center;
   clear: both;
-    margin-bottom: 0;
+    margin-bottom: 0;*/
+  color: #444;
+  font-weight: bold;
+  display: inline-block;
+  padding-right: 100px;
+  border-bottom: 1px solid #ddd;
 }
 
 .view.view-people.view-id-people, table {
@@ -210,6 +215,45 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 }
 
 /*///////////////////////////////////////////////////*/
+/*/////////////////// People Grid View /////////////////////*/
+/*@media all and (min-width: 980px) and (max-width: 1219px) {
+    .view-display-id-people_grid .views-row {
+        width: 31.6%;
+    }
+}
+
+@media all and (min-width: 980px) {
+    .view-display-id-people_grid .views-row {
+        float: left;
+    }
+}
+
+@media all and (min-width: 740px) and (max-width: 979px) {
+    .view-display-id-people_grid .views-row {
+        width: 46.8%;
+    }
+
+    .view-display-id-people_grid .views-row-odd {
+        float: left;
+    }
+
+    .view-display-id-people_grid .views-row-even {
+        float: right;
+    }
+}*/
+
+.view-display-id-people_grid .views-row {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid #ddd;
+}
+
+.view-display-id-people_grid .views-row {
+  margin: 0.25em;
+  padding: 0.5em;
+  height: 215px;
+}
+
+/*///////////////////////////////////////////////////*/
 /*/////////////////// People Node View /////////////////////*/
 .node-people .field-name-field-people-image {
     float: left;
@@ -224,10 +268,6 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
     clear: both;
 }
 
-h1 {
-    float: left;
-}
-
 .field-name-field-people-title-category {
     float: left;
     margin-left: 1em;
@@ -239,6 +279,16 @@ h1 {
     font-size: 1.25em;
     font-style: italic;
     color: rgba(52, 52, 52, 0.6);
+}
+
+.node-people .field {
+  margin: 0;
+}
+
+.node-people .field h3.field-label {
+  font-size: 1.071em;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .region-inner .tabs,
@@ -289,6 +339,7 @@ h1 {
 }
 
 .field.field-name-field-people-expertise .field-items,
+.field.field-name-field-people-expertise .links.inline,
 .field.field-name-field-people-other-affiliations .field-items,
 .field.field-name-field-people-affiliation .field-items,
 .field.field-name-field-people-interdepartmental .field-items,
@@ -310,6 +361,7 @@ h1 {
 }
 
 .field.field-name-field-people-expertise .field-item,
+.field.field-name-field-people-expertise .links.inline > li,
 .field.field-name-field-people-other-affiliations .field-item,
 .field.field-name-field-people-affiliation .field-item,
 .field.field-name-field-people-interdepartmental .field-item,
@@ -327,6 +379,11 @@ h1 {
 .field.field-name-field-people-cv .field-item {
     display: block;
 }
+
+.field.field-name-field-people-expertise .links.inline > li {
+  font-size: 1.071em;
+}
+
 
 .field.field-name-field-people-bio {
     margin: 10px 0;
