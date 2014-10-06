@@ -14,6 +14,7 @@ function luggage_people_user_default_permissions() {
   $permissions['create people content'] = array(
     'name' => 'create people content',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'people editor' => 'people editor',
       'people user' => 'people user',
     ),
@@ -24,6 +25,7 @@ function luggage_people_user_default_permissions() {
   $permissions['delete any people content'] = array(
     'name' => 'delete any people content',
     'roles' => array(
+      'content publisher' => 'content publisher',
       'people editor' => 'people editor',
     ),
     'module' => 'node',
@@ -33,6 +35,7 @@ function luggage_people_user_default_permissions() {
   $permissions['delete own people content'] = array(
     'name' => 'delete own people content',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'people user' => 'people user',
     ),
     'module' => 'node',
@@ -42,6 +45,8 @@ function luggage_people_user_default_permissions() {
   $permissions['edit any people content'] = array(
     'name' => 'edit any people content',
     'roles' => array(
+      'content editor' => 'content editor',
+      'content publisher' => 'content publisher',
       'people editor' => 'people editor',
     ),
     'module' => 'node',
