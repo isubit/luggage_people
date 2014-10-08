@@ -110,6 +110,4 @@ features[variable][] = node_preview_people
 features[variable][] = node_submitted_people
 features[variable][] = pathauto_node_people_pattern
 features[views_view][] = people
-features_exclude[dependencies][flexslider_fields] = flexslider_fields
-features_exclude[menu_custom][main-menu] = main-menu
-github = https://raw.github.com/ISUITC/luggage_people/master/luggage_people.info
+github = https://raw.github.com/isubit/luggage_people/master/luggage_people.info

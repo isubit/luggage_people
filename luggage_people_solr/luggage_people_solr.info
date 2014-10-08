@@ -15,3 +15,4 @@ features[ctools][] = facetapi:facetapi_defaults:1
 features[facetapi][] = apachesolr@solr:block:im_field_people_category
 features[facetapi][] = apachesolr@solr:block:im_field_people_expertise
 features[features_api][] = api:2
+github = https://raw.github.com/isubit/luggage_people_solr/master/luggage_people_solr.info
