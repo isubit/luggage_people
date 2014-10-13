@@ -257,7 +257,7 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 /*/////////////////// People Node View /////////////////////*/
 .node-people .field-name-field-people-image {
     float: left;
-    margin: 10px 5px 5px 0;
+    margin: 10px 20px 20px 0;
 }
 
 .field-name-field-people-image + .field:not(.field-name-field-people-bio) {
@@ -281,8 +281,8 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
     color: rgba(52, 52, 52, 0.6);
 }
 
-.node-people .field {
-  margin: 0;
+.field.field-type-taxonomy-term-reference {
+    margin: 0;
 }
 
 .node-people .field h3.field-label {
