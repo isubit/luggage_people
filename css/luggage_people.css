@@ -304,14 +304,8 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 .field.field-name-field-people-major,
 .field.field-name-field-people-advisor,
 .field.field-name-field-people-education,
-.field.field-name-field-people-email,
-.field.field-name-field-people-website,
-.field.field-name-field-people-phone,
-.field.field-name-field-people-street,
-.field.field-name-field-people-city,
-.field.field-name-field-people-state,
-.field.field-name-field-people-postal,
-.field.field-name-field-people-cv {
+.field.field-name-field-people-cv,
+.group-contact {
     background: rgba(255,255,255,0.5);
     border: 1px solid #ddd;
 }
@@ -324,18 +318,12 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 .field.field-name-field-people-major .field-label,
 .field.field-name-field-people-advisor .field-label,
 .field.field-name-field-people-education .field-label,
-.field.field-name-field-people-email .field-label,
-.field.field-name-field-people-website .field-label,
-.field.field-name-field-people-phone .field-label,
-.field.field-name-field-people-street .field-label,
-.field.field-name-field-people-city .field-label,
-.field.field-name-field-people-state .field-label,
-.field.field-name-field-people-postal .field-label,
 .field.field-name-field-people-cv .field-label {
     width: 150px;
     padding: 5px;
     color: #666;
     display: inline-block;
+    font-weight: bold;
 }
 
 .field.field-name-field-people-expertise .field-items,
@@ -347,13 +335,6 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 .field.field-name-field-people-major .field-items,
 .field.field-name-field-people-advisor .field-items,
 .field.field-name-field-people-education .field-items,
-.field.field-name-field-people-email .field-items,
-.field.field-name-field-people-website .field-items,
-.field.field-name-field-people-phone .field-items,
-.field.field-name-field-people-street .field-items,
-.field.field-name-field-people-city .field-items,
-.field.field-name-field-people-state .field-items,
-.field.field-name-field-people-postal .field-items,
 .field.field-name-field-people-cv .field-items {
     padding: 5px;
     border-left: 2px solid #bbb;
@@ -369,15 +350,31 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 .field.field-name-field-people-major .field-item,
 .field.field-name-field-people-advisor .field-item,
 .field.field-name-field-people-education .field-item,
-.field.field-name-field-people-email .field-item,
-.field.field-name-field-people-website .field-item,
-.field.field-name-field-people-phone .field-item,
-.field.field-name-field-people-street .field-item,
-.field.field-name-field-people-city .field-item,
-.field.field-name-field-people-state .field-item,
-.field.field-name-field-people-postal .field-item,
 .field.field-name-field-people-cv .field-item {
     display: block;
+}
+
+.group-contact {
+    padding: 0 20px 20px 20px;
+}
+
+.group-contact > legend {
+    padding: 10px;
+    color: #666;
+    font-weight: bold;
+}
+
+.group-contact .field {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.group-contact .field.field-name-field-people-street,
+.group-contact .field.field-name-field-people-city,
+.group-contact .field.field-name-field-people-state,
+.group-contact .field.field-name-field-people-postal {
+    display: inline-block;
+    margin-bottom: 0;
 }
 
 .field.field-name-field-people-expertise .links.inline > li {

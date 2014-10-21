@@ -13,6 +13,39 @@ function luggage_people_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_contact|node|people|full';
+  $field_group->group_name = 'group_contact';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'people';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Contact',
+    'weight' => '11',
+    'children' => array(
+      0 => 'field_people_city',
+      1 => 'field_people_email',
+      2 => 'field_people_phone',
+      3 => 'field_people_postal',
+      4 => 'field_people_state',
+      5 => 'field_people_street',
+      6 => 'field_people_website',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Contact',
+      'instance_settings' => array(
+        'classes' => 'group-contact field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_contact|node|people|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_people_affiliated|node|people|form';
   $field_group->group_name = 'group_people_affiliated';
   $field_group->entity_type = 'node';

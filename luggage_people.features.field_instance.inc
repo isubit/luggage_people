@@ -262,7 +262,7 @@ function luggage_people_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 21,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -317,11 +317,11 @@ function luggage_people_field_default_field_instances() {
         'weight' => 16,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 15,
+        'weight' => 16,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -407,7 +407,7 @@ function luggage_people_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 18,
+        'weight' => 19,
       ),
       'search_index' => array(
         'label' => 'inline',
@@ -570,11 +570,11 @@ function luggage_people_field_default_field_instances() {
         'weight' => 12,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -695,7 +695,7 @@ function luggage_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 25,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -961,7 +961,7 @@ function luggage_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 24,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1133,7 +1133,7 @@ function luggage_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 22,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1290,11 +1290,11 @@ function luggage_people_field_default_field_instances() {
         'weight' => 14,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1466,11 +1466,11 @@ function luggage_people_field_default_field_instances() {
         'weight' => 18,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 17,
+        'weight' => 18,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1553,11 +1553,11 @@ function luggage_people_field_default_field_instances() {
         'weight' => 17,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 16,
+        'weight' => 17,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1640,11 +1640,11 @@ function luggage_people_field_default_field_instances() {
         'weight' => 15,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 14,
+        'weight' => 15,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1803,7 +1803,7 @@ function luggage_people_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 23,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1856,11 +1856,11 @@ function luggage_people_field_default_field_instances() {
         'weight' => 13,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -1934,7 +1934,7 @@ function luggage_people_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 19,
+        'weight' => 20,
       ),
       'search_index' => array(
         'label' => 'inline',
