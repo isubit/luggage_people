@@ -245,12 +245,9 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
 .view-display-id-people_grid .views-row {
     background: rgba(255, 255, 255, 0.7);
     border: 1px solid #ddd;
-}
-
-.view-display-id-people_grid .views-row {
-  margin: 0.25em;
-  padding: 0.5em;
-  height: 215px;
+    margin: 0.25em;
+    padding: 0.5em;
+    min-height: 215px;
 }
 
 /*///////////////////////////////////////////////////*/
