@@ -101,22 +101,21 @@ function _luggage_people_insert_after_first_element(&$a, $element) {
 }
 
 /**
- * Implements hook_pubcookie_post_register()
- * Called just after successful pubcookie login for the first time.
+ * Implements hook_shibboleth_post_register()
+ * Called just after successful shibboleth login for the first time.
+ * The shib_auth module does not support this hook.
  */
-function luggage_people_pubcookie_post_register($variables) {
+function luggage_people_shibboleth_post_register($record) {
   global $user;
-  $pubcookie_user = $variables['pubcookie_user'];
-  $records = pubcookie_ldap_search($variables['pubcookie_user']);
-  if (!isset($records[0])) {
-    watchdog('luggage_people', 'No LDAP record found to change ownership');
+  $shibboleth_user = $record['shibboleth_user'];
+  // givenName should always be present
+  if (!isset($record['givenName'])) {
+    watchdog('luggage_people', 'No LDAP info found. Aborting people creation.');
     return;
   } 
-  else {
-    $record = $records[0];
-  }
-  // Assign role faculty | staff | affiliate | student
-  if ($role = user_role_load_by_name($record['userclass'])) {
+
+   // Assign role faculty | staff | affiliate | student
+  if ($role = user_role_load_by_name($record['userClass'])) {
     user_multiple_role_edit(array($user->uid), 'add_role', $role->rid);
   }
   
@@ -130,7 +129,7 @@ function luggage_people_pubcookie_post_register($variables) {
   $query = new EntityFieldQuery();
   $nids = $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'people')
-    ->fieldCondition('field_people_email', 'email', $variables['pubcookie_user'], 'STARTS_WITH')
+    ->fieldCondition('field_people_email', 'email', $record['mail'], '=')
     ->execute();
 
   if ($nids) {
@@ -152,9 +151,9 @@ function luggage_people_pubcookie_post_register($variables) {
     $pos = strpos($record['title'], '[');
     $title_only = drupal_substr($record['title'], 0, $pos);
 
-    $node->title = $record['givenname'] . ' ' . $record['sn'];
-    $node->field_people_first_name[LANGUAGE_NONE][0]['value'] = $record['givenname'];
-    $node->field_people_middle_initial[LANGUAGE_NONE][0]['value'] = $record['isupersonmiddleinitial'];
+    $node->title = $record['givenName'] . ' ' . $record['sn'];
+    $node->field_people_first_name[LANGUAGE_NONE][0]['value'] = $record['givenName'];
+    $node->field_people_middle_initial[LANGUAGE_NONE][0]['value'] = $record['isuPersonMiddleInitial'];
     $node->field_people_last_name[LANGUAGE_NONE][0]['value'] = $record['sn'];
     $node->field_people_position[LANGUAGE_NONE][0]['value'] = rtrim($title_only);
 
@@ -163,9 +162,9 @@ function luggage_people_pubcookie_post_register($variables) {
     $node->field_people_street[LANGUAGE_NONE][0]['value'] = $record['street'];
     $node->field_people_city[LANGUAGE_NONE][0]['value'] = $record['l'];
     $node->field_people_state[LANGUAGE_NONE][0]['value'] = $record['st'];
-    $node->field_people_postal[LANGUAGE_NONE][0]['value'] = $record['postalcode'];
+    $node->field_people_postal[LANGUAGE_NONE][0]['value'] = $record['postalCode'];
 
-    $node->field_people_phone[LANGUAGE_NONE][0]['value'] = $record['telephonenumber'];
+    $node->field_people_phone[LANGUAGE_NONE][0]['value'] = $record['telephoneNumber'];
 
     //image
     $node->field_people_image[LANGUAGE_NONE][0]['alt'] = 'Profile picture of ' . $node->title;
