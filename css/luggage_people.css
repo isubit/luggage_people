@@ -250,6 +250,19 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
     min-height: 215px;
 }
 
+.view-display-id-people_grid .views-field-title {
+  -ms-word-break: break-word;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+.view-display-id-people_grid .views-field-title span a {
+  font-size: 14px;
+}
+
 /*///////////////////////////////////////////////////*/
 /*/////////////////// People Node View /////////////////////*/
 .node-people .field-name-field-people-image {
