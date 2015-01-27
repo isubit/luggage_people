@@ -13,12 +13,13 @@ include_once 'luggage_people.features.inc';
  */
 
 function luggage_people_menu() {
-  $items['admin/myprofile'] = array(
+  $items['my/profile'] = array(
     'title' => 'My Public Profile',
     'description' => 'Edit your public profile',
     'page callback' => 'luggage_people_profile_link',
     'access arguments' => array('edit own people content'),
     'weight' => '15',
+    'menu_name' => 'Management',
   );
   return $items;
 }
