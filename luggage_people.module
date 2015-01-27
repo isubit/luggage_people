@@ -147,9 +147,12 @@ function luggage_people_shibboleth_post_register($record) {
     node_object_prepare($node);
     $node->language = LANGUAGE_NONE;
 
-    // Remove [DEPT] from title
+    // LDAP title is really position, e.g., Systems Analyst III [ENT]
+    // Remove [DEPT] from title, then rename attribute to 'position'
+    // to avoid stomping on $node->title.
     $pos = strpos($record['title'], '[');
-    $title_only = rtrim(drupal_substr($record['title'], 0, $pos));
+    $record['position'] = rtrim(drupal_substr($record['title'], 0, $pos));
+    unset($record['title']);
     
     // Map LDAP record keys to Luggage people node field names.
     $map = array(
@@ -161,10 +164,10 @@ function luggage_people_shibboleth_post_register($record) {
       'st'                     => 'state',
       'postalCode'             => 'postal',
       'telephoneNumber'        => 'phone',
+      'title'                  => 'position',
     );
 
     $node->title = $record['givenName'] . ' ' . $record['sn'];
-    $node->field_people_position[LANGUAGE_NONE][0]['value'] = $title_only; 
     // Image
     $node->field_people_image[LANGUAGE_NONE][0]['alt'] = 'Profile picture of ' . $node->title;
     $node->field_people_image[LANGUAGE_NONE][0]['title'] = $node->title;
