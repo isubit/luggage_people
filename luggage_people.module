@@ -149,32 +149,54 @@ function luggage_people_shibboleth_post_register($record) {
 
     // Remove [DEPT] from title
     $pos = strpos($record['title'], '[');
-    $title_only = drupal_substr($record['title'], 0, $pos);
+    $title_only = rtrim(drupal_substr($record['title'], 0, $pos));
+    
+    // Map LDAP record keys to Luggage people node field names.
+    $map = array(
+      'givenName'              => 'first_name',
+      'isuPersonMiddleInitial' => 'middle_initial',
+      'sn'                     => 'last_name',
+      'mail'                   => 'email',
+      'l'                      => 'city',
+      'st'                     => 'state',
+      'postalCode'             => 'postal',
+      'telephoneNumber'        => 'phone',
+    );
 
     $node->title = $record['givenName'] . ' ' . $record['sn'];
-    $node->field_people_first_name[LANGUAGE_NONE][0]['value'] = $record['givenName'];
-    $node->field_people_middle_initial[LANGUAGE_NONE][0]['value'] = $record['isuPersonMiddleInitial'];
-    $node->field_people_last_name[LANGUAGE_NONE][0]['value'] = $record['sn'];
-    $node->field_people_position[LANGUAGE_NONE][0]['value'] = rtrim($title_only);
-
-    //street
-    $node->field_people_email[LANGUAGE_NONE][0]['email'] = $record['mail'];
-    $node->field_people_street[LANGUAGE_NONE][0]['value'] = $record['street'];
-    $node->field_people_city[LANGUAGE_NONE][0]['value'] = $record['l'];
-    $node->field_people_state[LANGUAGE_NONE][0]['value'] = $record['st'];
-    $node->field_people_postal[LANGUAGE_NONE][0]['value'] = $record['postalCode'];
-
-    $node->field_people_phone[LANGUAGE_NONE][0]['value'] = $record['telephoneNumber'];
-
-    //image
+    $node->field_people_position[LANGUAGE_NONE][0]['value'] = $title_only; 
+    // Image
     $node->field_people_image[LANGUAGE_NONE][0]['alt'] = 'Profile picture of ' . $node->title;
     $node->field_people_image[LANGUAGE_NONE][0]['title'] = $node->title;
-
+    
+    // Email field type wants 'email' instead of 'value'.
+    $node->field_people_email[LANGUAGE_NONE][0]['email'] = $record['mail'];
+    
+    // Support population of arbitrary fields.
+    // Any LDAP record key will populate into an appropriately-named field.
+    // E.g., create a field with machine name field_people_isupersonloginshell
+    // on the People content type and it will be autopopulated by the value of
+    // the isuPersonLoginShell from LDAP.
+    $prefix = 'field_people_';
+    foreach ($record as $attribute => $value) {
+      $k = $attribute;
+      
+      // If there is a map entry, use that instead.
+      // E.g., for $record['st'] assign to $node->field_people_state, not
+      // $node->field_people_st
+      if (isset($map[$k])) {
+       $k = $map[$k];
+      }
+      $fieldname = 'field_people_' . drupal_strtolower($k);
+      
+      $node->{$fieldname}[LANGUAGE_NONE][0]['value'] = $value;
+    }
+    
     $node->path['pathauto'] = TRUE;
 
     watchdog('luggage_people', 'Creating profile for %name', array('%name' => $user->name));
 
-    // Create new People node for this pubcookie user.
+    // Create new People node for this shibboleth user.
     node_save($node);
   }
 }
