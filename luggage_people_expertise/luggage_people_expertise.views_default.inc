@@ -96,17 +96,6 @@ function luggage_people_expertise_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'expertise' => 'expertise',
   );
-  /* Filter criterion: Content: People Category (field_people_category) */
-  $handler->display->display_options['filters']['field_people_category_tid']['id'] = 'field_people_category_tid';
-  $handler->display->display_options['filters']['field_people_category_tid']['table'] = 'field_data_field_people_category';
-  $handler->display->display_options['filters']['field_people_category_tid']['field'] = 'field_people_category_tid';
-  $handler->display->display_options['filters']['field_people_category_tid']['relationship'] = 'nid';
-  $handler->display->display_options['filters']['field_people_category_tid']['value'] = array(
-    9 => '9',
-  );
-  $handler->display->display_options['filters']['field_people_category_tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['field_people_category_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_people_category_tid']['vocabulary'] = 'people_category';
 
   /* Display: Expertise */
   $handler = $view->new_display('page', 'Expertise', 'page');
