@@ -1,1 +1,25 @@
 <?php
+
+/**
+ * Implements hook_enable()
+ */
+function luggage_people_authors_enable() {
+    // Add a convenience variable for the vocabulary id
+    variable_set(LUGGAGE_AUTHORS_VOCAB,get_vocab_id('authors'));
+}
+
+/**
+ * @param $vocab_machine_name
+ * @return null or vocabulary object
+ */
+function get_vocab_id($vocab_machine_name) {
+    $vocabularies = taxonomy_get_vocabularies();
+    $vocab = Null;
+    foreach($vocabularies as $v) {
+        if($v->machine_name == $vocab_machine_name) {
+            $vocab = $v;
+            break;
+        }
+    }
+    return $vocab;
+}

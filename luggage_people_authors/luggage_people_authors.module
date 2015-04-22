@@ -19,13 +19,6 @@ function _people_node_form_submit($form, &$form_state) {
         // TODO: Handle null email
         $arr = explode('@',$form_state['values']['field_people_email'][LANGUAGE_NONE][0]['email'],2);
         $netid = $arr[0];
-        $term->field_authors_netid = array(
-            LANGUAGE_NONE => array(
-                '0' => array(
-                    'value' => $netid
-                )
-            )
-        );
         taxonomy_term_save($term);
     }
 }
