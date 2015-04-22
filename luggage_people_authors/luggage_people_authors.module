@@ -18,8 +18,9 @@ function _people_node_form_submit($form, &$form_state) {
         $term->name = $form_state['values']['field_people_first_name'][LANGUAGE_NONE][0]['value'] . ' ' . $form_state['values']['field_people_last_name'][LANGUAGE_NONE][0]['value'];
         $term->description = '';
         // TODO: Handle null email
-        $arr = explode('@',$form_state['values']['field_people_email'][LANGUAGE_NONE][0]['email'],2);
-        $netid = $arr[0];
+//        $arr = explode('@',$form_state['values']['field_people_email'][LANGUAGE_NONE][0]['email'],2);
+//        $netid = $arr[0];
+        $netid = $form_state['values']['field_people_email'][LANGUAGE_NONE][0]['email'];
         $term->field_author_netid[LANGUAGE_NONE][0]['value'] = $netid;
         taxonomy_term_save($term);
         $form_state['values']['field_people_author_name'][LANGUAGE_NONE][0] = (array)$term;
@@ -29,4 +30,38 @@ function _people_node_form_submit($form, &$form_state) {
         $term->name = $form_state['values']['field_people_author_name'][LANGUAGE_NONE][0]['name'];
         taxonomy_term_save($term);
     }
+}
+
+function luggage_people_authors_preprocess_field(&$variables, $hook) {
+    if($variables['element']['#field_name'] == 'field_people_author_name') {
+        foreach($variables['element']['#items'] as $key => $item) {
+            $blah = $item['taxonomy_term']->field_author_netid[LANGUAGE_NONE][0]['value'];
+            $user = node_load(_luggage_people_get_people_by_email($blah));
+            $variables['items'][$key] = array(
+                '#markup' => '<div class="profile-box"><h4>'.$item['taxonomy_term']->name.'&nbsp; <small><em>'.$user->field_people_position[LANGUAGE_NONE][0]['value'].'</em></small></h4><img src="'.$user->field_people_image[LANGUAGE_NONE][0]['uri'].'"></div>',
+            );
+        }
+    }
+}
+
+/**
+ * Helper function to get the people node based on email address
+ * @param $mail: email address of target people node
+ * @return array|bool: nid of the people node in a form suitable for entity_load(). FALSE if not found
+ */
+function _luggage_people_get_people_by_email($mail) {
+
+    $query = new EntityFieldQuery();
+
+    $query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'people')
+        ->fieldCondition('field_people_email', 'email', $mail, '=');
+
+    $result = $query->execute();
+
+    if(!empty($result)) {
+        return array_keys($result['node']);
+    }
+
+    return FALSE;
 }
