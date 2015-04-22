@@ -5,7 +5,8 @@
  */
 function luggage_people_authors_enable() {
     // Add a convenience variable for the vocabulary id
-    variable_set(LUGGAGE_AUTHORS_VOCAB,get_vocab_id('authors'));
+    $vocab = get_vocab_id('authors');
+    variable_set(LUGGAGE_AUTHORS_VOCAB,$vocab->vid);
 }
 
 /**

@@ -12,6 +12,7 @@ function luggage_people_authors_form_people_node_form_alter(&$form, &$form_state
 
 function _people_node_form_submit($form, &$form_state) {
     if(count($form_state['values']['field_people_author_name'][LANGUAGE_NONE]) < 1) {
+        // No term exists
         $term = new stdClass();
         $term->vid = variable_get(LUGGAGE_AUTHORS_VOCAB);
         $term->name = $form_state['values']['field_people_first_name'][LANGUAGE_NONE][0]['value'] . ' ' . $form_state['values']['field_people_last_name'][LANGUAGE_NONE][0]['value'];
@@ -19,6 +20,13 @@ function _people_node_form_submit($form, &$form_state) {
         // TODO: Handle null email
         $arr = explode('@',$form_state['values']['field_people_email'][LANGUAGE_NONE][0]['email'],2);
         $netid = $arr[0];
+        $term->field_author_netid[LANGUAGE_NONE][0]['value'] = $netid;
+        taxonomy_term_save($term);
+        $form_state['values']['field_people_author_name'][LANGUAGE_NONE][0] = (array)$term;
+    } else {
+        // A term already exists and we need to modify its value
+        $term = taxonomy_term_load($form['#node']->field_people_author_name[LANGUAGE_NONE][0]['tid']);
+        $term->name = $form_state['values']['field_people_author_name'][LANGUAGE_NONE][0]['name'];
         taxonomy_term_save($term);
     }
 }
