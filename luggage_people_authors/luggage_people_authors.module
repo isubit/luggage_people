@@ -1,5 +1,31 @@
 <?php
+
+const LUGGAGE_AUTHORS_VOCAB = 'luggage_vocabulary_authors';
+
 /**
  * @file
  * Drupal needs this blank file.
  */
+function luggage_people_authors_form_people_node_form_alter(&$form, &$form_state, $form_id) {
+    $form['#submit'][] = '_people_node_form_submit';
+}
+
+function _people_node_form_submit($form, &$form_state) {
+    if(count($form_state['values']['field_people_author_name'][LANGUAGE_NONE]) < 1) {
+        $term = new stdClass();
+        $term->vid = variable_get(LUGGAGE_AUTHORS_VOCAB);
+        $term->name = $form_state['values']['field_people_first_name'][LANGUAGE_NONE][0]['value'] . ' ' . $form_state['values']['field_people_last_name'][LANGUAGE_NONE][0]['value'];
+        $term->description = '';
+        // TODO: Handle null email
+        $arr = explode('@',$form_state['values']['field_people_email'][LANGUAGE_NONE][0]['email'],2);
+        $netid = $arr[0];
+        $term->field_authors_netid = array(
+            LANGUAGE_NONE => array(
+                '0' => array(
+                    'value' => $netid
+                )
+            )
+        );
+        taxonomy_term_save($term);
+    }
+}
