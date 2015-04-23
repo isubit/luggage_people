@@ -78,6 +78,7 @@ function luggage_people_authors_field_formatter_view($entity_type, $entity, $fie
                     '#firstname' => $user->field_people_first_name[LANGUAGE_NONE][0]['value'],
                     '#lastname' => $user->field_people_last_name[LANGUAGE_NONE][0]['value'],
                     '#position' => $user->field_people_position[LANGUAGE_NONE][0]['value'],
+                    '#url' => $user->nid,
                 );
             }
             break;
@@ -97,6 +98,7 @@ function luggage_people_authors_theme() {
                 'firstname' => Null,
                 'lastname' => Null,
                 'position' => Null,
+                'url' => Null,
             )
         )
     );
