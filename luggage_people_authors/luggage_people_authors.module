@@ -38,7 +38,8 @@ function luggage_people_authors_preprocess_field(&$variables, $hook) {
             $blah = $item['taxonomy_term']->field_author_netid[LANGUAGE_NONE][0]['value'];
             $user = node_load(_luggage_people_get_people_by_email($blah));
             $variables['items'][$key] = array(
-                '#markup' => '<div class="profile-box"><h4>'.$item['taxonomy_term']->name.'&nbsp; <small><em>'.$user->field_people_position[LANGUAGE_NONE][0]['value'].'</em></small></h4><img src="'.$user->field_people_image[LANGUAGE_NONE][0]['uri'].'"></div>',
+                '#markup' => '<div class="media">
+                    <div class="media-left"><a href><img src="'.image_style_url('thumbnail',$user->field_people_image[LANGUAGE_NONE][0]['uri']).'"></a></div><div class="media-body"><h4><a href>'.$item['taxonomy_term']->name.'</a>&nbsp; <small><em>'.$user->field_people_position[LANGUAGE_NONE][0]['value'].'</em></small></h4></div></div>',
             );
         }
     }
