@@ -88,8 +88,10 @@ function luggage_people_authors_field_formatter_view($entity_type, $entity, $fie
                     '#lastname' => $user->field_people_last_name[LANGUAGE_NONE][0]['value'],
                     '#position' => $user->field_people_position[LANGUAGE_NONE][0]['value'],
                     '#url' => $user->nid,
+                    '#bio' => (isset($user->field_people_bio[LANGUAGE_NONE][0]['value']))?substr($user->field_people_bio[LANGUAGE_NONE][0]['value'],0,300) . '...':'',
                 );
             }
+            drupal_add_css(drupal_get_path('module', 'luggage_people_authors') . '/css/luggage_people_authors.css');
             break;
     }
     return $element;
@@ -108,6 +110,7 @@ function luggage_people_authors_theme() {
                 'lastname' => Null,
                 'position' => Null,
                 'url' => Null,
+                'bio' => Null,
             ),
             'path' => drupal_get_path('module','luggage_people_authors') . '/templates'
         ),

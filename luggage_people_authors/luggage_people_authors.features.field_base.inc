@@ -71,7 +71,7 @@ function luggage_people_authors_field_default_field_bases() {
   // Exported field_base: 'field_people_author_name'
   $field_bases['field_people_author_name'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_people_author_name',
