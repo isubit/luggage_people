@@ -1,4 +1,10 @@
 <?php
+/**
+ * @file
+ * Code for the luggage_people_authors feature.
+ */
+
+include_once 'luggage_people_authors.features.inc';
 
 const LUGGAGE_AUTHORS_VOCAB = 'luggage_vocabulary_authors';
 

@@ -17,4 +17,4 @@ features[field_instance][] = taxonomy_term-authors-field_author_netid
 features[taxonomy][] = authors
 features[views_view][] = author_block
 features_exclude[dependencies][ctools] = ctools
-mtime = 1429796247
+mtime = 1430144788
