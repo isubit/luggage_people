@@ -9,6 +9,18 @@ include_once 'luggage_people_authors.features.inc';
 const LUGGAGE_AUTHORS_VOCAB = 'luggage_vocabulary_authors';
 
 /**
+ * Implements hook_field_widget_info()
+ */
+function luggage_people_authors_field_widget_info() {
+    return array(
+        'term_text_field' => array(
+            'label' => t('Term Text Field'),
+            'field_types' => array('taxonomy_term_reference'),
+        ),
+    );
+}
+
+/**
  * @file
  * Drupal needs this blank file.
  */
@@ -17,24 +29,39 @@ function luggage_people_authors_form_people_node_form_alter(&$form, &$form_state
 }
 
 function _people_node_form_submit($form, &$form_state) {
-    if(count($form_state['values']['field_people_author_name'][LANGUAGE_NONE]) < 1) {
-        // No term exists
-        $term = new stdClass();
-        $term->vid = variable_get(LUGGAGE_AUTHORS_VOCAB);
-        $term->name = $form_state['values']['field_people_first_name'][LANGUAGE_NONE][0]['value'] . ' ' . $form_state['values']['field_people_last_name'][LANGUAGE_NONE][0]['value'];
-        $term->description = '';
-        // TODO: Handle null email
+    $names = explode(',',$form['field_people_author_name'][LANGUAGE_NONE]['#default_value']);
+    foreach($form_state['values']['field_people_author_name'][LANGUAGE_NONE] as $i => $term) {
+        if (!isset($names[$i])) {
+            // This term does not exist yet
+            $term = new stdClass();
+            $term->vid = variable_get(LUGGAGE_AUTHORS_VOCAB);
+            $term->name = $form_state['values']['field_people_first_name'][LANGUAGE_NONE][0]['value'] . ' ' . $form_state['values']['field_people_last_name'][LANGUAGE_NONE][0]['value'];
+            $term->description = '';
+            // TODO: Handle null email
 //        $arr = explode('@',$form_state['values']['field_people_email'][LANGUAGE_NONE][0]['email'],2);
 //        $netid = $arr[0];
-        $netid = $form_state['values']['field_people_email'][LANGUAGE_NONE][0]['email'];
-        $term->field_author_netid[LANGUAGE_NONE][0]['value'] = $netid;
-        taxonomy_term_save($term);
-        $form_state['values']['field_people_author_name'][LANGUAGE_NONE][0] = (array)$term;
+            $netid = $form_state['values']['field_people_email'][LANGUAGE_NONE][0]['email'];
+            $term->field_author_netid[LANGUAGE_NONE][0]['value'] = $netid;
+            taxonomy_term_save($term);
+            $form_state['values']['field_people_author_name'][LANGUAGE_NONE][0] = (array)$term;
+        } else if($term['name'] != trim($names[$i])) {
+            // This term has been modified and needs to be updated
+            $t = taxonomy_term_load($form['#entity']->field_people_author_name[LANGUAGE_NONE][$i]['tid']);
+            $t->name = $term['name'];
+            taxonomy_term_save($t);
+            $form_state['values']['field_people_author_name'][LANGUAGE_NONE][$i] = object_to_array($t);
+        }
+    }
+}
+
+function object_to_array($object) {
+    if(is_object($object)) {
+        $object = get_object_vars($object);
+    }
+    if(is_array($object)) {
+        return array_map(__FUNCTION__, $object);
     } else {
-        // A term already exists and we need to modify its value
-        $term = taxonomy_term_load($form['#node']->field_people_author_name[LANGUAGE_NONE][0]['tid']);
-        $term->name = $form_state['values']['field_people_author_name'][LANGUAGE_NONE][0]['name'];
-        taxonomy_term_save($term);
+        return $object;
     }
 }
 
@@ -47,20 +74,8 @@ function luggage_people_authors_process_node(&$variables) {
         foreach($variables['field_people_author_name'][LANGUAGE_NONE] as $name) {
             array_push($variables['authNames'],$name['tid']);
         }
-//        $viewName = 'author_block';
-//        $displayId = 'block';
-//        print views_embed_view($viewName, $displayId, $authNames);
+        $variables['authNames'] = implode('+',$variables['authNames']);
     }
-//    if($variables['element']['#field_name'] == 'field_people_author_name') {
-//        foreach($variables['element']['#items'] as $key => $item) {
-//            $blah = $item['taxonomy_term']->field_author_netid[LANGUAGE_NONE][0]['value'];
-//            $user = node_load(_luggage_people_get_people_by_email($blah));
-//            $variables['items'][$key] = array(
-//                '#markup' => '<div class="media">
-//                    <div class="media-left"><a href><img src="'.image_style_url('thumbnail',$user->field_people_image[LANGUAGE_NONE][0]['uri']).'"></a></div><div class="media-body"><h4><a href>'.$item['taxonomy_term']->name.'</a>&nbsp; <small><em>'.$user->field_people_position[LANGUAGE_NONE][0]['value'].'</em></small></h4></div></div>',
-//            );
-//        }
-//    }
 }
 
 /**
