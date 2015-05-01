@@ -6,19 +6,7 @@
 
 include_once 'luggage_people_authors.features.inc';
 
-const LUGGAGE_AUTHORS_VOCAB = 'luggage_vocabulary_authors';
-
-/**
- * Implements hook_field_widget_info()
- */
-function luggage_people_authors_field_widget_info() {
-    return array(
-        'term_text_field' => array(
-            'label' => t('Term Text Field'),
-            'field_types' => array('taxonomy_term_reference'),
-        ),
-    );
-}
+const LUGGAGE_AUTHORS_VOCAB = 'authors';
 
 /**
  * @file
@@ -29,29 +17,88 @@ function luggage_people_authors_form_people_node_form_alter(&$form, &$form_state
 }
 
 function _people_node_form_submit($form, &$form_state) {
-    $names = explode(',',$form['field_people_author_name'][LANGUAGE_NONE]['#default_value']);
-    foreach($form_state['values']['field_people_author_name'][LANGUAGE_NONE] as $i => $term) {
-        if (!isset($names[$i])) {
-            // This term does not exist yet
-            $term = new stdClass();
-            $term->vid = variable_get(LUGGAGE_AUTHORS_VOCAB);
-            $term->name = $form_state['values']['field_people_first_name'][LANGUAGE_NONE][0]['value'] . ' ' . $form_state['values']['field_people_last_name'][LANGUAGE_NONE][0]['value'];
-            $term->description = '';
-            // TODO: Handle null email
+    $names = ($form['field_people_author_name'][LANGUAGE_NONE]['#default_value'] != "")?explode(',',$form['field_people_author_name'][LANGUAGE_NONE]['#default_value']):null;
+    $values = $form_state['values']['field_people_author_name'][LANGUAGE_NONE];
+    if(!$names) {
+        if(count($values) == 0) {
+            // If there were no values before
+            // Assign an author name
+            $name = getTermName($form_state);
+            $t = array_slice(taxonomy_get_term_by_name($name,LUGGAGE_AUTHORS_VOCAB),0,1)[0];
+            if(count($t) == 0) {
+                // No term exists in the vocabulary
+                // Create one
+                $netid = $form_state['values']['field_people_email'][LANGUAGE_NONE][0]['email'];
+                $form_state['values']['field_people_author_name'][LANGUAGE_NONE][] = (array)createTerm($name,$netid);
+            } else {
+                // Term already exists.
+                // Reassign?
+                if($t->field_author_netid[LANGUAGE_NONE][0]['value'] == $form_state['values']['field_people_email'][LANGUAGE_NONE][0]['email']) {
+                    // If term is owned by this user
+                    // Reassign
+                    $form_state['values']['field_people_author_name'][LANGUAGE_NONE][] = (array)$t;
+                }
+            }
+        }
+    } else {
+
+    }
+//    if(count($names) == 1 && $names[0]=='' && count($form_state['values']['field_people_author_name'][LANGUAGE_NONE]) == 0) {
+//        // User submitted the page without ever entering a term
+//        $name = $form_state['values']['field_people_first_name'][LANGUAGE_NONE][0]['value'] . ' ' . $form_state['values']['field_people_last_name'][LANGUAGE_NONE][0]['value'];
+//        $netid = $form_state['values']['field_people_email'][LANGUAGE_NONE][0]['email'];
+//        $form_state['values']['field_people_author_name'][LANGUAGE_NONE][0] = (array)createTerm($name,$netid);
+//    }
+//    // User submitted the page with 1 new term
+//    // User submitted the page with 2 new terms
+//    // User submitted the page and modified the first term
+//    foreach($form_state['values']['field_people_author_name'][LANGUAGE_NONE] as $i => $term) {
+//        if (!isset($names[$i])) {
+//            // This term does not exist yet
+//            $name = $form_state['values']['field_people_first_name'][LANGUAGE_NONE][0]['value'] . ' ' . $form_state['values']['field_people_last_name'][LANGUAGE_NONE][0]['value'];
+//            $netid = $form_state['values']['field_people_email'][LANGUAGE_NONE][0]['email'];
+//            $form_state['values']['field_people_author_name'][LANGUAGE_NONE][0] = (array)createTerm($name,$netid);
+//        } else if($term['name'] != trim($names[$i])) {
+//            // This term has been modified and needs to be updated
+//            $t = taxonomy_term_load($form['#entity']->field_people_author_name[LANGUAGE_NONE][$i]['tid']);
+//            $t->name = $term['name'];
+//            taxonomy_term_save($t);
+//            $form_state['values']['field_people_author_name'][LANGUAGE_NONE][$i] = object_to_array($t);
+//        }
+//    }
+}
+
+function getTermName($form_state) {
+    return $form_state['values']['field_people_first_name'][LANGUAGE_NONE][0]['value'] . ' ' . $form_state['values']['field_people_last_name'][LANGUAGE_NONE][0]['value'];
+}
+
+function createTerm($name,$netid) {
+    $term = new stdClass();
+    $term->vid = get_vocab_id(LUGGAGE_AUTHORS_VOCAB)->vid;
+    $term->name = $name;
+    $term->description = '';
+    // TODO: Handle null email
 //        $arr = explode('@',$form_state['values']['field_people_email'][LANGUAGE_NONE][0]['email'],2);
 //        $netid = $arr[0];
-            $netid = $form_state['values']['field_people_email'][LANGUAGE_NONE][0]['email'];
-            $term->field_author_netid[LANGUAGE_NONE][0]['value'] = $netid;
-            taxonomy_term_save($term);
-            $form_state['values']['field_people_author_name'][LANGUAGE_NONE][0] = (array)$term;
-        } else if($term['name'] != trim($names[$i])) {
-            // This term has been modified and needs to be updated
-            $t = taxonomy_term_load($form['#entity']->field_people_author_name[LANGUAGE_NONE][$i]['tid']);
-            $t->name = $term['name'];
-            taxonomy_term_save($t);
-            $form_state['values']['field_people_author_name'][LANGUAGE_NONE][$i] = object_to_array($t);
+    $term->field_author_netid[LANGUAGE_NONE][0]['value'] = $netid;
+    taxonomy_term_save($term);
+    return $term;
+}
+
+/**
+ * @param $vocab_machine_name
+ * @return null or vocabulary object
+ */
+function get_vocab_id($vocab_machine_name) {
+    $vocabularies = taxonomy_get_vocabularies();
+    $vocab = Null;
+    foreach($vocabularies as $v) {
+        if($v->machine_name == $vocab_machine_name) {
+            $vocab = $v;
+            break;
         }
     }
+    return $vocab;
 }
 
 function object_to_array($object) {
@@ -66,6 +113,18 @@ function object_to_array($object) {
 }
 
 /**
+ * Implements hook_field_widget_info().
+ */
+function luggage_people_authors_field_widget_info() {
+    return array(
+      'author_widget' => array(
+        'label' => t('Author Widget'),
+        'field types' => array('taxonomy_term_reference'),
+      ),
+    );
+}
+
+/**
  * Implements hook_preprocess_HOOK
  */
 function luggage_people_authors_process_node(&$variables) {
@@ -76,6 +135,28 @@ function luggage_people_authors_process_node(&$variables) {
         }
         $variables['authNames'] = implode('+',$variables['authNames']);
     }
+}
+
+/**
+ * Implements hook_field_widget_form().
+ */
+function luggage_people_authors_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
+    switch ($instance['widget']['type']) {
+        case 'author_widget' :
+            $element['author_widget'] = array(
+              '#type' => 'fieldset',
+              '#title' => $element['#title'],
+              '#tree' => TRUE,
+            );
+            $element['author_widget']['alias_name'] = array(
+              '#type' => 'textfield',
+              '#title' => t('Name'),
+              '#default_value' => isset($items[$delta]['author_name']) ? $items[$delta]['author_name'] : '',
+              '#required' => $element['#required'],
+            );
+            break;
+    }
+    return $element;
 }
 
 /**
