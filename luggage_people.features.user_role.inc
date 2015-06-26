@@ -16,11 +16,5 @@ function luggage_people_user_default_roles() {
     'weight' => 7,
   );
 
-  // Exported role: people user.
-  $roles['people user'] = array(
-    'name' => 'people user',
-    'weight' => 6,
-  );
-
   return $roles;
 }

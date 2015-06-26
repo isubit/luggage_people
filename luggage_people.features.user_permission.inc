@@ -16,7 +16,6 @@ function luggage_people_user_default_permissions() {
     'roles' => array(
       'authenticated user' => 'authenticated user',
       'people editor' => 'people editor',
-      'people user' => 'people user',
     ),
     'module' => 'node',
   );
@@ -36,7 +35,6 @@ function luggage_people_user_default_permissions() {
     'name' => 'delete own people content',
     'roles' => array(
       'authenticated user' => 'authenticated user',
-      'people user' => 'people user',
     ),
     'module' => 'node',
   );
@@ -74,7 +72,6 @@ function luggage_people_user_default_permissions() {
     'name' => 'edit own people content',
     'roles' => array(
       'authenticated user' => 'authenticated user',
-      'people user' => 'people user',
     ),
     'module' => 'node',
   );
