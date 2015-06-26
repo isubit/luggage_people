@@ -13,7 +13,7 @@ function luggage_people_user_default_roles() {
   // Exported role: people editor.
   $roles['people editor'] = array(
     'name' => 'people editor',
-    'weight' => 7,
+    'weight' => 3,
   );
 
   return $roles;
