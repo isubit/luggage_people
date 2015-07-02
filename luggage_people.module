@@ -80,7 +80,7 @@ function luggage_people_preprocess_page(&$vars) {
 /**
  * Implements hook_theme_registry_alter()
  **/
-function people_theme_registry_alter(&$theme_registry) {
+function luggage_people_theme_registry_alter(&$theme_registry) {
   $mod_path = drupal_get_path('module', 'luggage_people');
   $theme_registry_copy = $theme_registry;       // munge on a copy
   _theme_process_registry($theme_registry_copy, 'phptemplate', 'theme_engine', 'pow', $mod_path);
@@ -113,13 +113,13 @@ function luggage_people_shibboleth_post_register($record) {
   if (!isset($record['givenName'])) {
     watchdog('luggage_people', 'No LDAP info found. Aborting people creation.');
     return;
-  } 
+  }
 
    // Assign role faculty | staff | affiliate | student
   if ($role = user_role_load_by_name($record['userClass'])) {
     user_multiple_role_edit(array($user->uid), 'add_role', $role->rid);
   }
-  
+
   // Bail out if no node of type 'people' exists.
   $node_type_names = node_type_get_names();
   if (!isset($node_type_names['people'])) {
@@ -154,7 +154,7 @@ function luggage_people_shibboleth_post_register($record) {
     $pos = strpos($record['title'], '[');
     $record['position'] = rtrim(drupal_substr($record['title'], 0, $pos));
     unset($record['title']);
-    
+
     // Map LDAP record keys to Luggage people node field names.
     $map = array(
       'givenName'              => 'first_name',
@@ -172,10 +172,10 @@ function luggage_people_shibboleth_post_register($record) {
     // Image
     $node->field_people_image[LANGUAGE_NONE][0]['alt'] = 'Profile picture of ' . $node->title;
     $node->field_people_image[LANGUAGE_NONE][0]['title'] = $node->title;
-    
+
     // Email field type wants 'email' instead of 'value'.
     $node->field_people_email[LANGUAGE_NONE][0]['email'] = $record['mail'];
-    
+
     // Support population of arbitrary fields.
     // Any LDAP record key will populate into an appropriately-named field.
     // E.g., create a field with machine name field_people_isupersonloginshell
@@ -184,7 +184,7 @@ function luggage_people_shibboleth_post_register($record) {
     $prefix = 'field_people_';
     foreach ($record as $attribute => $value) {
       $k = $attribute;
-      
+
       // If there is a map entry, use that instead.
       // E.g., for $record['st'] assign to $node->field_people_state, not
       // $node->field_people_st
@@ -192,10 +192,10 @@ function luggage_people_shibboleth_post_register($record) {
        $k = $map[$k];
       }
       $fieldname = 'field_people_' . drupal_strtolower($k);
-      
+
       $node->{$fieldname}[LANGUAGE_NONE][0]['value'] = $value;
     }
-    
+
     $node->path['pathauto'] = TRUE;
 
     watchdog('luggage_people', 'Creating profile for %name', array('%name' => $user->name));
