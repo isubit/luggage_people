@@ -30,19 +30,16 @@ function luggage_people_expertise_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1000';
-  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
       'field' => 'name',
       'rendered' => 1,
       'rendered_strip' => 0,
     ),
-    1 => array(
-      'field' => 'description',
-      'rendered' => 1,
-      'rendered_strip' => 0,
-    ),
   );
+  $handler->display->display_options['style_options']['class'] = 'item-list-item';
+  $handler->display->display_options['style_options']['wrapper_class'] = 'item-list clearfix';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Taxonomy term: Content with term */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
@@ -55,8 +52,12 @@ function luggage_people_expertise_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = '<span>[name]</span>';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_type'] = '0';
+  $handler->display->display_options['fields']['name']['element_class'] = 'item-title';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Field: Taxonomy term: Term description */
   $handler->display->display_options['fields']['description']['id'] = 'description';
@@ -102,7 +103,7 @@ function luggage_people_expertise_views_default_views() {
   $handler->display->display_options['path'] = 'expertise';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Expertise';
-  $handler->display->display_options['menu']['weight'] = '-35';
+  $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
