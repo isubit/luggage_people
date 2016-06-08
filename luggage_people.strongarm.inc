@@ -21,7 +21,7 @@ function luggage_people_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_pattern_node_people';
-  $strongarm->value = '[node:field-people-title] [node:field-people-first-name] [node:field-people-middle-initial] [node:field-people-last-name]'
+  $strongarm->value = '[node:field-people-title] [node:field-people-first-name] [node:field-people-middle-initial] [node:field-people-last-name]';
   $export['auto_entitylabel_pattern_node_people'] = $strongarm;
 
   $strongarm = new stdClass();
