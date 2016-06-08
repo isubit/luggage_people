@@ -21,7 +21,7 @@ function luggage_people_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_pattern_node_people';
-  $strongarm->value = '[node:field_people_title] [node:field_people_first_name] [node:field_people_middle_initial] [node:field_people_last_name]';
+  $strongarm->value = '[node:field-people-title] [node:field-people-first-name] [node:field-people-middle-initial] [node:field-people-last-name]';
   $export['auto_entitylabel_pattern_node_people'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -179,7 +179,7 @@ function luggage_people_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_people_pattern';
-  $strongarm->value = 'people/[node:field_people_first_name]-[node:field_people_last_name]';
+  $strongarm->value = 'people/[node:field-people-first-name]-[node:field-people-last-name]';
   $export['pathauto_node_people_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
