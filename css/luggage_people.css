@@ -301,8 +301,8 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.region-inner .tabs,
-.region-inner .block {
+#section-content .region-inner .tabs,
+#section-content .region-inner .block {
     clear: both;
 }
 
