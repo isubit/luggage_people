@@ -23,7 +23,7 @@ function luggage_people_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'People';
-  $handler->display->display_options['css_class'] = 'profile-wrapper';
+  $handler->display->display_options['css_class'] = 'luggage-grid';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -39,7 +39,7 @@ function luggage_people_views_default_views() {
       'rendered_strip' => 0,
     ),
   );
-  $handler->display->display_options['style_options']['row_class'] = 'clearfix';
+  $handler->display->display_options['style_options']['row_class'] = 'luggage-gridrow';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Content: Taxonomy terms on node */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
@@ -224,7 +224,7 @@ function luggage_people_views_default_views() {
       'rendered_strip' => 0,
     ),
   );
-  $handler->display->display_options['style_options']['row_class'] = 'clearfix';
+  $handler->display->display_options['style_options']['row_class'] = 'luggage-gridrow';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -290,6 +290,7 @@ function luggage_people_views_default_views() {
   $handler->display->display_options['fields']['field_people_position']['table'] = 'field_data_field_people_position';
   $handler->display->display_options['fields']['field_people_position']['field'] = 'field_people_position';
   $handler->display->display_options['fields']['field_people_position']['label'] = '';
+  $handler->display->display_options['fields']['field_people_position']['element_class'] = 'luggage-gridgreen';
   $handler->display->display_options['fields']['field_people_position']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_people_position']['delta_offset'] = '0';
   /* Field: Content: People Category */

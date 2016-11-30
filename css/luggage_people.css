@@ -64,9 +64,7 @@ article.node {
 #edit-field-people-state,
 #edit-field-people-postal,
 #edit-field-people-phone {
-  /*float:left;*/
   width: 35%;
-  /*margin-right: 2em;*/
 }
 
 #edit-field-tags,
@@ -82,121 +80,10 @@ article.node {
     border-top: 1px solid #ccc;
 }
 
-/*------------------------end people node page--------------------*/
-
-.views-field.views-field-field-people-image.people-image {
-  float: right;
-}
-
-.view-display-id-people .views-row {
-  clear: both;
-  margin-bottom: 1em;
-}
-
-view.view-people.view-id-people.view-display-id-people.profile-wrapper {
-  min-width: 480px;
-}
-
-.views-label.views-label-field-people-email {
-  border-bottom: 1px solid #CEC9BB;
-  margin-bottom: 3px;
-}
-
-.view-content > h3 {
- /* background-color: #E9E8DD;
-  background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, 0.2) 25%, rgba(0, 0, 0, 0));
-  border: 1px solid #CCCCCC;
-  color: #4F4F4F;
-  font-family: inherit;
-  font-weight: 600;
-  padding: 2px;
-  text-align: center;
-  clear: both;
-    margin-bottom: 0;*/
-  color: #444;
-  font-weight: bold;
-  display: inline-block;
-  padding-right: 100px;
-  border-bottom: 1px solid #ddd;
-}
-
-.view.view-people.view-id-people, table {
-  border: medium none !important;
-}
-
-.views-field.views-field-title.profile-title.h2 {
-  font-size: 1.1em;
-}
-
-.views-field.views-field-field-people-bio.profile-about {
-  padding-bottom: 10px;
-}
-
-.views-field.views-field-field-people-email {
-  color: #333333;
-}
-
-.views-field.views-field-field-people-website {
-  color: #333333;
-  padding: 0 5px;
-}
-
+/*---------- Area of Expertise Grid ----------*/
 .views-field.views-field-field-people-position.profile-position {
   width: 50%;
-}
-
-.people-profile {
-  border-bottom: 1px solid #CCCCCC;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  min-width: 525px;
-}
-
-.view.view-people.view-id-people, table {
-  border: medium none !important;
-}
-
-.views-field.views-field-field-people-position.profile-position {
   font-size: 1.1em;
-}
-
-view.view-people.view-id-people.view-display-id-people.profile-wrapper {
-  min-width: 480px;
-}
-
-.view.view-people.view-id-people, table {
-  border: medium none !important;
-}
-
-.views-field.views-field-title.profile-title.h2 {
-  font-size: 1.3em;
-  font-weight: bold;
-}
-
-.views-field.views-field-field-people-position.profile-position {
-  font-size: 1.1em;
-}
-
-.view-display-id-people .views-row {
-  background: none repeat scroll 0 0 #EEEEEE;
-  padding: 10px;
-}
-
-.field-name-field-people-image {
-  height: auto;
-  max-width: 100%;
-}
-
-view.view-people.view-id-people.view-display-id-people.profile-wrapper {
-  min-width: 480px;
-}
-
-.view.view-people.view-id-people, table {
-  border: medium none !important;
-}
-
-.views-field.views-field-field-people-position.profile-position {
-  width: 50%;
 }
 
 .views-field.views-field-field-people-position {
@@ -205,66 +92,7 @@ view.view-people.view-id-people.view-display-id-people.profile-wrapper {
     color: rgb(36,109,73);
 }
 
-.views-field.views-field-field-people-position.profile-position {
-  font-size: 1.1em;
-}
-
-.views-field-field-people-image {
-    float: left;
-    margin-right: 0.5em;
-}
-
-/*///////////////////////////////////////////////////*/
-/*/////////////////// People Grid View /////////////////////*/
-/*@media all and (min-width: 980px) and (max-width: 1219px) {
-    .view-display-id-people_grid .views-row {
-        width: 31.6%;
-    }
-}
-
-@media all and (min-width: 980px) {
-    .view-display-id-people_grid .views-row {
-        float: left;
-    }
-}
-
-@media all and (min-width: 740px) and (max-width: 979px) {
-    .view-display-id-people_grid .views-row {
-        width: 46.8%;
-    }
-
-    .view-display-id-people_grid .views-row-odd {
-        float: left;
-    }
-
-    .view-display-id-people_grid .views-row-even {
-        float: right;
-    }
-}*/
-
-.view-display-id-people_grid .views-row {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid #ddd;
-    margin: 0.25em;
-    padding: 0.5em;
-    min-height: 215px;
-}
-
-.view-display-id-people_grid .views-field-title {
-  -ms-word-break: break-word;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-}
-
-.view-display-id-people_grid .views-field-title span a {
-  font-size: 14px;
-}
-
-/*///////////////////////////////////////////////////*/
-/*/////////////////// People Node View /////////////////////*/
+/*---------- People Node View ----------*/
 .node-people .field-name-field-people-image {
     float: left;
     margin: 10px 20px 20px 0;
