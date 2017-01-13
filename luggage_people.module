@@ -59,6 +59,9 @@ function luggage_people_preprocess_page(&$vars) {
   if (!empty($node) && $node->type == 'people' || arg(0).arg(1).arg(2) == 'nodeaddpeople') {
     drupal_add_css(drupal_get_path('module', 'luggage_people') . '/css/luggage_people.css');
   }
+  if (arg(0) == 'search') {
+    drupal_add_css(drupal_get_path('module', 'luggage_people') . '/css/luggage_people_search.css');
+  }
 }
 
 // Adding support to discover template files
