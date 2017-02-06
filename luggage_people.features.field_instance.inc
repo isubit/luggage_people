@@ -770,7 +770,7 @@ function luggage_people_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'size' => 55,
       ),
       'type' => 'text_textfield',
       'weight' => 2,
@@ -1038,7 +1038,7 @@ function luggage_people_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'size' => 55,
       ),
       'type' => 'text_textfield',
       'weight' => 4,
