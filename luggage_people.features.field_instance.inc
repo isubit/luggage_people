@@ -10,7 +10,7 @@
 function luggage_people_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-people-field_people_advisor'
+  // Exported field_instance: 'node-people-field_people_advisor'.
   $field_instances['node-people-field_people_advisor'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -86,7 +86,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_affiliation'
+  // Exported field_instance: 'node-people-field_people_affiliation'.
   $field_instances['node-people-field_people_affiliation'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -162,7 +162,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_bio'
+  // Exported field_instance: 'node-people-field_people_bio'.
   $field_instances['node-people-field_people_bio'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -253,7 +253,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_category'
+  // Exported field_instance: 'node-people-field_people_category'.
   $field_instances['node-people-field_people_category'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -310,7 +310,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_city'
+  // Exported field_instance: 'node-people-field_people_city'.
   $field_instances['node-people-field_people_city'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -397,7 +397,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_cv'
+  // Exported field_instance: 'node-people-field_people_cv'.
   $field_instances['node-people-field_people_cv'] = array(
     'bundle' => 'people',
     'deleted' => 0,
@@ -476,7 +476,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_education'
+  // Exported field_instance: 'node-people-field_people_education'.
   $field_instances['node-people-field_people_education'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -563,7 +563,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_email'
+  // Exported field_instance: 'node-people-field_people_email'.
   $field_instances['node-people-field_people_email'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -623,7 +623,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_expertise'
+  // Exported field_instance: 'node-people-field_people_expertise'.
   $field_instances['node-people-field_people_expertise'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -692,7 +692,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_first_name'
+  // Exported field_instance: 'node-people-field_people_first_name'.
   $field_instances['node-people-field_people_first_name'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -777,7 +777,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_image'
+  // Exported field_instance: 'node-people-field_people_image'.
   $field_instances['node-people-field_people_image'] = array(
     'bundle' => 'people',
     'deleted' => 0,
@@ -884,7 +884,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_interdepartmental'
+  // Exported field_instance: 'node-people-field_people_interdepartmental'.
   $field_instances['node-people-field_people_interdepartmental'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -960,7 +960,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_last_name'
+  // Exported field_instance: 'node-people-field_people_last_name'.
   $field_instances['node-people-field_people_last_name'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1045,7 +1045,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_major'
+  // Exported field_instance: 'node-people-field_people_major'.
   $field_instances['node-people-field_people_major'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1132,7 +1132,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_middle_initial'
+  // Exported field_instance: 'node-people-field_people_middle_initial'.
   $field_instances['node-people-field_people_middle_initial'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1217,7 +1217,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_other_affiliations'
+  // Exported field_instance: 'node-people-field_people_other_affiliations'.
   $field_instances['node-people-field_people_other_affiliations'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1293,7 +1293,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_phone'
+  // Exported field_instance: 'node-people-field_people_phone'.
   $field_instances['node-people-field_people_phone'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1380,7 +1380,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_position'
+  // Exported field_instance: 'node-people-field_people_position'.
   $field_instances['node-people-field_people_position'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1469,7 +1469,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_postal'
+  // Exported field_instance: 'node-people-field_people_postal'.
   $field_instances['node-people-field_people_postal'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1556,7 +1556,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_state'
+  // Exported field_instance: 'node-people-field_people_state'.
   $field_instances['node-people-field_people_state'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1643,7 +1643,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_street'
+  // Exported field_instance: 'node-people-field_people_street'.
   $field_instances['node-people-field_people_street'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1730,7 +1730,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_teaching'
+  // Exported field_instance: 'node-people-field_people_teaching'.
   $field_instances['node-people-field_people_teaching'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1806,7 +1806,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_title'
+  // Exported field_instance: 'node-people-field_people_title'.
   $field_instances['node-people-field_people_title'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1861,7 +1861,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_people_website'
+  // Exported field_instance: 'node-people-field_people_website'.
   $field_instances['node-people-field_people_website'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1937,7 +1937,7 @@ function luggage_people_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-people-field_tags'
+  // Exported field_instance: 'node-people-field_tags'.
   $field_instances['node-people-field_tags'] = array(
     'bundle' => 'people',
     'default_value' => NULL,

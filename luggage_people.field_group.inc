@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function luggage_people_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -41,7 +41,7 @@ function luggage_people_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_contact|node|people|full'] = $field_group;
+  $field_groups['group_contact|node|people|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -68,7 +68,7 @@ function luggage_people_field_group_info() {
       ),
     ),
   );
-  $export['group_people_affiliated|node|people|form'] = $field_group;
+  $field_groups['group_people_affiliated|node|people|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -96,7 +96,7 @@ function luggage_people_field_group_info() {
       ),
     ),
   );
-  $export['group_people_faculty|node|people|form'] = $field_group;
+  $field_groups['group_people_faculty|node|people|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -128,7 +128,7 @@ function luggage_people_field_group_info() {
       ),
     ),
   );
-  $export['group_people_location|node|people|form'] = $field_group;
+  $field_groups['group_people_location|node|people|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -156,7 +156,15 @@ function luggage_people_field_group_info() {
       ),
     ),
   );
-  $export['group_people_student|node|people|form'] = $field_group;
+  $field_groups['group_people_student|node|people|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Contact');
+  t('Faculty Fields');
+  t('Location Fields');
+  t('Non-ISU People Fields');
+  t('Student Fields');
+
+  return $field_groups;
 }

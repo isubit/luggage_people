@@ -10,7 +10,7 @@
 function luggage_people_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_people_advisor'
+  // Exported field_base: 'field_people_advisor'.
   $field_bases['field_people_advisor'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -39,7 +39,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_people_affiliation'
+  // Exported field_base: 'field_people_affiliation'.
   $field_bases['field_people_affiliation'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -68,7 +68,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_people_bio'
+  // Exported field_base: 'field_people_bio'.
   $field_bases['field_people_bio'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -87,7 +87,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_people_category'
+  // Exported field_base: 'field_people_category'.
   $field_bases['field_people_category'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -113,7 +113,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_people_city'
+  // Exported field_base: 'field_people_city'.
   $field_bases['field_people_city'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -134,7 +134,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_people_cv'
+  // Exported field_base: 'field_people_cv'.
   $field_bases['field_people_cv'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -157,7 +157,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_people_education'
+  // Exported field_base: 'field_people_education'.
   $field_bases['field_people_education'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -178,7 +178,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_people_email'
+  // Exported field_base: 'field_people_email'.
   $field_bases['field_people_email'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -193,7 +193,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'email',
   );
 
-  // Exported field_base: 'field_people_expertise'
+  // Exported field_base: 'field_people_expertise'.
   $field_bases['field_people_expertise'] = array(
     'active' => 1,
     'cardinality' => 3,
@@ -219,7 +219,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_people_first_name'
+  // Exported field_base: 'field_people_first_name'.
   $field_bases['field_people_first_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -240,7 +240,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_people_image'
+  // Exported field_base: 'field_people_image'.
   $field_bases['field_people_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -262,7 +262,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_people_interdepartmental'
+  // Exported field_base: 'field_people_interdepartmental'.
   $field_bases['field_people_interdepartmental'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -291,7 +291,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_people_last_name'
+  // Exported field_base: 'field_people_last_name'.
   $field_bases['field_people_last_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -312,7 +312,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_people_major'
+  // Exported field_base: 'field_people_major'.
   $field_bases['field_people_major'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -333,7 +333,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_people_middle_initial'
+  // Exported field_base: 'field_people_middle_initial'.
   $field_bases['field_people_middle_initial'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -354,7 +354,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_people_other_affiliations'
+  // Exported field_base: 'field_people_other_affiliations'.
   $field_bases['field_people_other_affiliations'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -383,7 +383,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_people_phone'
+  // Exported field_base: 'field_people_phone'.
   $field_bases['field_people_phone'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -404,7 +404,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_people_position'
+  // Exported field_base: 'field_people_position'.
   $field_bases['field_people_position'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -425,7 +425,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_people_postal'
+  // Exported field_base: 'field_people_postal'.
   $field_bases['field_people_postal'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -446,7 +446,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_people_state'
+  // Exported field_base: 'field_people_state'.
   $field_bases['field_people_state'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -467,7 +467,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_people_street'
+  // Exported field_base: 'field_people_street'.
   $field_bases['field_people_street'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -488,7 +488,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_people_teaching'
+  // Exported field_base: 'field_people_teaching'.
   $field_bases['field_people_teaching'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -517,7 +517,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_people_title'
+  // Exported field_base: 'field_people_title'.
   $field_bases['field_people_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -545,7 +545,7 @@ function luggage_people_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_people_website'
+  // Exported field_base: 'field_people_website'.
   $field_bases['field_people_website'] = array(
     'active' => 1,
     'cardinality' => -1,
