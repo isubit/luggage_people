@@ -70,7 +70,7 @@ function luggage_people_node_info() {
     'people' => array(
       'name' => t('People'),
       'base' => 'node_content',
-      'description' => t('People profiles'),
+      'description' => t('Maintain professional profiles for people, including contact information, affiliations, and expertise.'),
       'has_title' => '1',
       'title_label' => t('Full Name'),
       'help' => '',
