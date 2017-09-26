@@ -82,6 +82,7 @@ features[field_instance][] = node-people-field_people_website
 features[field_instance][] = node-people-field_tags
 features[image][] = people_full
 features[image][] = people_thumb
+features[metatag][] = node:people
 features[node][] = people
 features[taxonomy][] = expertise
 features[taxonomy][] = people_category
