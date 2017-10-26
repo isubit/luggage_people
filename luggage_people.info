@@ -111,4 +111,6 @@ features[variable][] = node_submitted_people
 features[variable][] = pathauto_node_people_pattern
 features[variable][] = publishcontent_people
 features[views_view][] = people
+features_exclude[dependencies][ds] = ds
+features_exclude[dependencies][luggage_seo] = luggage_seo
 github = https://raw.github.com/isubit/luggage_people/master/luggage_people.info
