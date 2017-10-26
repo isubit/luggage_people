@@ -34,7 +34,8 @@ before_script:
 
   # create new site, stubbing sendmail path with true to prevent delivery errors and manually resolving drush path
   - mysql -e 'create database luggage_people'
-  - php -d sendmail_path=`which true` drush --yes core-quick-drupal --profile=testing --no-server --db-url=mysql://root:@127.0.0.1/luggage_people --enable=simpletest luggage_people
+  - echo 'sendmail_path="/bin/true"' | tee -a "$(php --ini | grep "Loaded Configuration" | awk '{print $4}')"
+  - drush --yes core-quick-drupal --profile=testing --no-server --db-url=mysql://root:@127.0.0.1/luggage_people --enable=simpletest luggage_people
 
   # reference and enable travis_ci_drupal_module_example in build site
   - ln -s $(readlink -e $(cd -)) luggage_people/drupal/sites/all/modules/luggage_people
