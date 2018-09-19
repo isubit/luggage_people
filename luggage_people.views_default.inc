@@ -335,6 +335,10 @@ function luggage_people_views_default_views() {
   $handler->display->display_options['sorts']['field_people_last_name_value']['id'] = 'field_people_last_name_value';
   $handler->display->display_options['sorts']['field_people_last_name_value']['table'] = 'field_data_field_people_last_name';
   $handler->display->display_options['sorts']['field_people_last_name_value']['field'] = 'field_people_last_name_value';
+  /* Sort criterion: Content: First Name (field_people_first_name) */
+  $handler->display->display_options['sorts']['field_people_first_name_value']['id'] = 'field_people_first_name_value';
+  $handler->display->display_options['sorts']['field_people_first_name_value']['table'] = 'field_data_field_people_first_name';
+  $handler->display->display_options['sorts']['field_people_first_name_value']['field'] = 'field_people_first_name_value';
   $handler->display->display_options['path'] = 'people';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'People';
